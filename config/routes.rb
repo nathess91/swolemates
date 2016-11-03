@@ -11,5 +11,8 @@ Rails.application.routes.draw do
   get "/results", to: "results#index"
   post "/results", to: "results#create"
   get "/results/:id", to: "results#show", as: 'result'
+  get "/challenges", to: "challenges#index", as: "challenges"
+  get "/challenges/new", to: "challenges#new", as: "new_challenge" 
+  post "/challenges", to: "challenges#create"
 
 end
