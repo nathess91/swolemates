@@ -5,12 +5,18 @@
 <%= form_for (@user = User.new) do |f| %>
     <div class="container well margin-top-20 small-container">
         <div class="bold margin-top-20">
-            First Name, Last Name
+            First Name
         </div>
         <div class="margin-top-20">
             <%= f.text_field :first_name, class: "form-control" %>
+        </div>
+        <div class="bold margin-top-20">
+            Last Name
+        </div>
+        <div class="margin-top-20">
             <%= f.text_field :last_name, class: "form-control" %>
         </div>
+
         <div class="bold margin-top-20">
             Gender
         </div>
@@ -27,13 +33,13 @@
             Favorite Workout
         </div>
         <div class="margin-top-20">
-            <%= f.text_field :fav_workout, class: "form-control" %></p>
+            <%= f.text_field :fav_workout, class: "form-control" %>
         </div>
         <div class="bold margin-top-20">
             Favorite Food
         </div>
         <div class="margin-top-20">
-            <%= f.text_field :fav_food, class: "form-control" %></p>
+            <%= f.text_field :fav_food, class: "form-control" %>
         </div>
         <div class="bold margin-top-20">
             Email

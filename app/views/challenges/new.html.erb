@@ -12,7 +12,7 @@
             Opponent
         </div>
         <div class="margin-top-20">
-            <%= f.select :opponent_id, @opponents.map {|opponent| [opponent.name, opponent.id]} %>
+            <%= f.select :opponent_id, @opponents.map {|opponent| ["#{opponent.first_name} #{opponent.last_name}", opponent.id]} %>
         </div>
         <div class="bold margin-top-20">
             My Results
