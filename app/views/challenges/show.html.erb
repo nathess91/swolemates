@@ -1,0 +1,42 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h1> BATTLE ROYALE </h1>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="offset-md-2 col-md-4">
+			<p><%= "#{@user.first_name} #{@user.last_name}"%></p>
+			<p><%= @workout.title %></p>
+			<p><%= @workout.description %></p>
+			<p><%= "#{@user_result.qty} #{@user_result.unit}" %></p>
+		</div>
+		<div class="col-md-4">
+			<p><%= "#{@opponent.first_name} #{@opponent.last_name}"%></p>
+			<p><%= @workout.title %></p>
+			<p><%= @workout.description %></p>
+			<% if @opponent_results %>
+				<p><%= "#{@opponent_results.qty} #{@opponent_results.unit}" %></p>
+			<% else %>
+					<%= form_for (@result = Result.new), url: challenge_path(@challenge), method: :put  do |f| %>
+						<%= f.text_field :qty %>
+						<%= @workout.unit_of_competition %>
+						<%= f.hidden_field :user_id, :value => current_user.id %>
+						<%= f.hidden_field :workout_id, :value => @workout.id %>
+						<%= f.hidden_field :unit, :value => @workout.unit_of_competition %>
+						<%= f.submit %>
+					<% end %>
+			<% end %>
+		</div>
+	</div>
+	<% if @challenge.accepted.nil? %>
+	<div class="row">
+		<%= button_to "Be a lil bitch (we'll think less of you)", challenge_path(@challenge), {:method => :delete, class: "btn btn-danger"}  %>
+	</div>
+	<% end %>
+
+
+</div>
