@@ -1,10 +1,25 @@
 class ResultsController < ApplicationController
-  def index
-    redirect_to result_path(@result)
-  end
+  # def index
+  #   @results = Result.find_by(user: params[:user_id])
+  # end
+
   def create
+    @result = Result.create(results_params)
+    if @result.save
+      redirect_to result_path(@result)
+    else
+      render :new
+    end
   end
+
   def show
     @result = Result.find(params[:id])
   end
+
+  private
+
+  def results_params
+    params.require(:result).permit(:user_id, :workout_id, :qty, :unit)
+  end
+
 end
