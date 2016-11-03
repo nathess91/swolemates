@@ -1,1 +1,89 @@
 <h1>WELCOME TO SWOLEMATES, BIATCH</h1>
+
+<h3> Please sign up! </h3>
+
+<%= form_for (@user = User.new) do |f| %>
+    <div class="container well margin-top-20 small-container">
+        <div class="bold margin-top-20">
+            First Name
+        </div>
+        <div class="margin-top-20">
+            <%= f.text_field :first_name, class: "form-control" %>
+        </div>
+        <div class="bold margin-top-20">
+            Last Name
+        </div>
+        <div class="margin-top-20">
+            <%= f.text_field :last_name, class: "form-control" %>
+        </div>
+
+        <div class="bold margin-top-20">
+            Gender
+        </div>
+        <div class="margin-top-20">
+            <%= f.text_field :gender, class: "form-control" %>
+        </div>
+        <div class="bold margin-top-20">
+            Age
+        </div>
+        <div class="margin-top-20">
+            <%= f.number_field :age, class: "form-control" %>
+        </div>
+        <div class="bold margin-top-20">
+            Favorite Workout
+        </div>
+        <div class="margin-top-20">
+            <%= f.text_field :fav_workout, class: "form-control" %>
+        </div>
+        <div class="bold margin-top-20">
+            Favorite Food
+        </div>
+        <div class="margin-top-20">
+            <%= f.text_field :fav_food, class: "form-control" %>
+        </div>
+        <div class="bold margin-top-20">
+            Email
+        </div>
+        <div class="margin-top-20">
+            <%= f.email_field :email, class: "form-control" %>
+        </div>
+        <div class="bold margin-top-20">
+            Password
+        </div>
+        <div class="margin-top-20">
+            <%= f.password_field :password, class: "form-control" %>
+        </div>
+        <div class="margin-top-20">
+            <a href="/" class="btn btn-default">Cancel</a>
+            <%= f.submit "Create User", class: "btn btn-primary" %>
+        </div>
+        <div class="margin-top-10">
+            <span>Have an account? <a href="#" id="login-link">Login Here</a></span>
+        </div>
+    </div>
+<% end %>
+
+
+<%= form_tag(login_path, id: "login_form") do %>
+    <div class="container well margin-top-20 small-container">
+        <div class="bold margin-top-20">
+            Email
+        </div>
+        <div class="margin-top-20">
+            <%= text_field_tag :email, nil, required: true, class: "form-control" %>
+        </div>
+        <div class="bold margin-top-20">
+            Password
+        </div>
+        <div class="margin-top-20">
+            <%= password_field_tag :password, nil, required: true, class: "form-control" %>
+        </div>
+        <div class="margin-top-20">
+            <a href="/" class="btn btn-default">Cancel</a>
+            <%= submit_tag "Log In!", class: "btn btn-primary" %>
+        </div>
+        <div class="margin-top-10">
+            <span>Need to sign up? <a href="#" id="sign-up-link"> Sign up here </a></span>
+        </div>
+    </div>
+<% end %>

@@ -1,0 +1,36 @@
+<h1>Welcome</h1>
+<div class='jumbotron'>
+  <div class='container'>
+  <% @workouts.each do |workout| %>
+    <div><h3><%= workout.title %></h3><br>
+      <%= workout.description %>
+      <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modal-<%=workout.id%>">
+        Log Workout
+      </button>
+    </div>
+    <div class="modal fade" id="modal-<%=workout.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">My Workout</h4>
+          </div>
+          <div class="modal-body">
+            <h3><%= workout.title %></h3>
+            It took me <%= form_for @result, url: "/results", method: :post  do |f| %>
+             <%= f.text_field :qty %>
+             <%= workout.unit_of_competition %>
+             <%= f.hidden_field :user_id, :value => User.first.id %>
+             <%= f.hidden_field :workout_id, :value => workout.id %>
+             <%= f.hidden_field :unit, :value => workout.unit_of_competition %>
+            <%= f.submit %>
+             <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
