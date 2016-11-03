@@ -1,0 +1,32 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h1> BATTLE ROYALE </h1>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="offset-md-2 col-md-4">
+			<p><%= "#{@user.first_name} #{@user.last_name}"%></p>
+			<p><%= @workout.title %></p>
+			<p><%= @workout.description %></p>
+			<p><%= "#{@user_result.qty} #{@user_result.unit}" %></p>
+		</div>
+		<div class="col-md-4">
+			<p><%= "#{@opponent.first_name} #{@opponent.last_name}"%></p>
+			<p><%= @workout.title %></p>
+			<p><%= @workout.description %></p>
+			<% if @opponent_result %>
+				<p><%= "#{@opponent_result.qty} #{@opponent_result.unit}" %></p>
+			<% end %>
+		</div>
+	</div>
+	<% if @challenge.accepted.nil? %>
+	<div class="row">
+		<%= button_to "Accept Challenge", challenge_path(@challenge), {:method => :put, class: "btn btn-success"}  %><br>
+		<%= button_to "Wimp Out", challenge_path(@challenge), {:method => :delete, class: "btn btn-danger"}  %>
+	</div>
+	<% end %>
+</div>
