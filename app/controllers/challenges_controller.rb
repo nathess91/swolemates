@@ -6,7 +6,9 @@ class ChallengesController < ApplicationController
 		@opponents = User.all
 		@results = current_user.results
 	end
-
+	def index
+		@challenges = current_user.challenges
+	end
 	def create
 		challenge = Challenge.create(challenge_params)
 		redirect_to root_path
