@@ -7,7 +7,7 @@ class ChallengesController < ApplicationController
 		@results = current_user.results
 	end
 	def index
-		@challenges = User.find(current_user.id).challenges
+		@challenges = current_user.challenges
 	end
 	def create
 		challenge = Challenge.create(challenge_params)
