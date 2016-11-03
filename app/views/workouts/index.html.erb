@@ -22,7 +22,7 @@
             It took me <%= form_for @result, url: "/results", method: :post  do |f| %>
              <%= f.text_field :qty %>
              <%= workout.unit_of_competition %>
-             <%= f.hidden_field :user_id, :value => User.first.id %>
+             <%= f.hidden_field :user_id, :value => current_user.id %>
              <%= f.hidden_field :workout_id, :value => workout.id %>
              <%= f.hidden_field :unit, :value => workout.unit_of_competition %>
             <%= f.submit %>
