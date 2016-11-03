@@ -32,6 +32,11 @@
 			<% end %>
 		</div>
 	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<%= link_to "Back to challenges", challenges_path %>
+		</div>
+	</div>
 	<% if @challenge.accepted.nil? %>
 	<div class="row">
 		<%= button_to "Be a lil bitch (we'll think less of you)", challenge_path(@challenge), {:method => :delete, class: "btn btn-danger"}  %>
