@@ -1,0 +1,18 @@
+<% @challenges.each do |challenge| %>
+<div>
+  <h3>Current</h3>
+<% if challenge.opponent_results_id == nil %>
+<%= challenge.workout.title %>
+</div>
+<% elsif challenge.accepted == nil %>
+<div>
+  <h3>Pending</h3>
+<%= challenge.workout.title %>
+</div>
+<% else %>
+<div>
+  <h3>Completed</h3>
+<%= challenge.workout.title %>
+</div>
+<% end %>
+<% end %>
