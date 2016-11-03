@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   get "/challenges", to: "challenges#index", as: "challenges"
   get "/challenges/new", to: "challenges#new", as: "new_challenge"
   post "/challenges", to: "challenges#create"
+  get "/users/:id", to: "users#show"
 
 end
