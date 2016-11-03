@@ -13,7 +13,7 @@
 
  */
  @import "bootstrap-sprockets";
-@import "bootstrap";
+ @import "bootstrap";
 
 .navbar-fixed-left {
   width: 140px;
@@ -31,8 +31,13 @@
   padding-left: 160px;
 }
 
-/* On using dropdown menu (To right shift popuped) */
-.navbar-fixed-left .navbar-nav > li > .dropdown-menu {
-  margin-top: -50px;
-  margin-left: 140px;
+.navbar-fixed-left a {
+  text-decoration: none;
+}
+
+.nav-title {
+  font-size: 15px;
+  padding-left: 20px;
+  font-family: 'Permanent Marker', cursive;
+  color: #BF2F27;
 }
