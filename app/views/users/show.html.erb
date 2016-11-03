@@ -14,4 +14,4 @@ Joined: <%= @user.created_at %>
 Most Recent Workout:
 <%= @user.results.last.workout.title %>
 <a src='#'>Update Information</a>
-<a src='#'>View Challenges</a>
+<%= link_to 'View Challenges', challenges_path(@current_user) %>
