@@ -3,7 +3,7 @@ class ChallengesController < ApplicationController
 	def new
 		@challenge = Challenge.new
 		@workouts = Workout.all
-		@opponents = User.all
+		@opponents = User.where.not(id: current_user.id)
 		@results = current_user.results
 	end
 	def index
