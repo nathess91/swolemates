@@ -26,6 +26,9 @@
     </div>
     <!-- MAIN CONTENT -->
     <div class="container">
+      <!-- FLASH MESSAGES -->
+      <%= render "partials/error_flash" %>
+      <%= render "partials/success_flash" %>
       <div class="row">
       <%= yield %>
       </div>

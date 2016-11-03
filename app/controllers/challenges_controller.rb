@@ -6,12 +6,22 @@ class ChallengesController < ApplicationController
 		@opponents = User.all
 		@results = current_user.results
 	end
+
 	def index
 		@challenges = current_user.challenges
 	end
+
 	def create
 		challenge = Challenge.create(challenge_params)
-		redirect_to challenge_path(challenge)
+
+		if challenge.save
+			flash[:success] = "New challenge successfully created! Go find your Swolemate!"
+			redirect_to challenge_path(challenge)
+		else
+			flash[:error] = "Oops. There was a problem making a new challenge."
+			redirect_to :back
+		end
+
 	end
 
 	def show
@@ -42,6 +52,7 @@ class ChallengesController < ApplicationController
 	end
 
 	private
+
 	def challenge_params
 		params.require(:challenge).permit(:opponent_id, :workout_id, :result_id, :user_id)
 	end
