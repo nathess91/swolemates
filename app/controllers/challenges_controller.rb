@@ -17,12 +17,17 @@ class ChallengesController < ApplicationController
 		@user = @challenge.user
 		@user_result = @challenge.result
 		@opponent = @challenge.opponent
-		@opponent_result = @challenge.opponent_result
+		@opponent_results = @challenge.opponent_results
 		@workout = @challenge.workout
 	end
 
 	def update
 		@challenge = Challenge.find(params[:id])
+		@result = Result.new(results_params)
+		if @result.valid?
+			@result.save
+		end
+		@challenge.opponent_results = @result || nil
 		@challenge.accepted = true
 		@challenge.save
 		redirect_to challenge_path(@challenge)
@@ -38,5 +43,9 @@ class ChallengesController < ApplicationController
 	def challenge_params
 		params.require(:challenge).permit(:opponent_id, :workout_id, :result_id, :user_id)
 	end
+
+	def results_params
+    params.require(:result).permit(:user_id, :workout_id, :qty, :unit)
+  end
 
 end
