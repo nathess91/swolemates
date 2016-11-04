@@ -21,6 +21,7 @@ class ChallengesController < ApplicationController
 				WHERE user_id = #{current_user.id} 
 					 OR opponent_id = #{current_user.id}"
 		)
+		@challenges = Challenge.paginate(:page => params[:page], :per_page => 5)
 	end
 
 	def create
