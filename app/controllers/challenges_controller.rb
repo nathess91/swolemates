@@ -8,7 +8,12 @@ class ChallengesController < ApplicationController
 	end
 
 	def index
-		@challenges = current_user.challenges
+		@challenges = Challenge.find_by_sql(
+			"SELECT * 
+				 FROM challenges 
+				WHERE user_id = #{current_user.id} 
+					 OR opponent_id = #{current_user.id}"
+		)
 	end
 
 	def create
