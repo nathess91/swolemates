@@ -1,25 +1,59 @@
-<div><h3>Hello <%= @user.first_name %></h3></div>
-<%= image_tag @user.avatar.url(:medium) %>
-<div style="float:right">
 
-    <p>Favorite Food: <%= @user.fav_food %></p>
-    <p>Favorite Type of Workout: <%= @user.fav_workout %></p>
+    <div class="card hovercard">
+        <div class="card-background">
+            <%= image_tag @user.avatar.url, class: "card-bkimg" %>
+        </div>
+        <div class="useravatar">
+            <%= image_tag @user.avatar.url %><br>
+        </div>
+        <div class="card-info">
+          <span class="card-title"><%= @user.first_name %></span>
+          <br>
+          <span class="more-info">
+            <b>Swole Since:   </b> <%= @user.created_at.strftime("%B %d, %Y") %><br>
+            <b>Food/Diet:   </b> <%= @user.fav_food %><br>
+            <b>Favorite Workout:   </b> <%= @user.fav_workout %><br>
+            <%= link_to edit_user_path(@user) do %>
+              <span class="glyphicon glyphicon-pencil"></span>
+            <% end %>
+          </span>
 
-</div>
-Joined: <%= @user.created_at.strftime("%B %d, %Y") %>
-<br>
+        </div>
+    </div>
+    <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
+        <div class="btn-group" role="group">
+            <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                <div class="hidden-xs">Most Recent Workout</div>
+            </button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>
+                <div class="hidden-xs">Challenges</div>
+            </button>
+        </div>
+    </div>
 
-Most Recent Workout:
-<% if @user.results.count == 0 %>
-<h1>Work Out More </h1>
-<% else %>
-<%= @user.results.last.workout.title %>
+      <div class="well">
+      <div class="tab-content">
+        <div class="tab-pane fade in active" id="tab1">
+          <h3>Most Recent Workout</h3>
+          <br>
+          <% if @user.results.count == 0 %>
+            <p><i>Nothing to see here...Work out more!!</i></p>
+          <% else %>
+            <%= @user.results.last.workout.title %><br>
+            <%= @user.results.last.workout.qty %> <%= @user.results.last.workout.unit %>
+          <% end %>
+        </div>
+        <div class="tab-pane fade in" id="tab2">
+          <h3>Challenges</h3>
+          <br>
+          <% unless @user.challenges.count == 0 %>
+            <%= link_to 'View Challenges', challenges_path(@current_user), class: 'btn btn-primary' %>
+          <% end %>
+        </div>
+      </div>
+      <br>
+      <%= link_to 'Create New Challenge', new_challenge_path, class: "btn btn-danger" %>
 
-<% end %>
-<% unless @user.challenges.count == 0 %>
-<%= link_to 'View Challenges', challenges_path(@current_user), class: 'btn btn-primary' %>
-<% end %>
-
-<%= link_to 'Challenge a Friend', new_challenge_path, class: 'btn btn-primary' %>
-
-<%= link_to 'Update Information', edit_user_path(@user) %>
+    </div>
