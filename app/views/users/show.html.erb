@@ -1,14 +1,12 @@
 <div><h3>Hello <%= @user.first_name %></h3></div>
-<%= form_for @user, url: users_path, html: { multipart: true } do |form| %>
-  <%= form.file_field :avatar %>
-<% end %>
+<%= image_tag @user.avatar.url(:medium) %>
 <div style="float:right">
 
     <p>Favorite Food: <%= @user.fav_food %></p>
     <p>Favorite Type of Workout: <%= @user.fav_workout %></p>
 
 </div>
-Joined: <%= @user.created_at.to_date %>
+Joined: <%= @user.created_at.strftime("%B %d, %Y") %>
 <br>
 
 Most Recent Workout:
@@ -16,9 +14,12 @@ Most Recent Workout:
 <h1>Work Out More </h1>
 <% else %>
 <%= @user.results.last.workout.title %>
-<%= link_to 'Update Information', edit_user_path(@user), class: 'btn btn-primary' %>
+
 <% end %>
 <% unless @user.challenges.count == 0 %>
 <%= link_to 'View Challenges', challenges_path(@current_user), class: 'btn btn-primary' %>
 <% end %>
+
 <%= link_to 'Challenge a Friend', new_challenge_path, class: 'btn btn-primary' %>
+
+<%= link_to 'Update Information', edit_user_path(@user) %>

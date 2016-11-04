@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 			flash[:error] = "There was an issue creating your account. Double check your info."
 			redirect_to root_path
 		end
-		
+
 	end
 
 	def edit
@@ -37,6 +37,6 @@ class UsersController < ApplicationController
 
 	private
 	def user_params
-		params.require(:user).permit(:first_name, :last_name, :gender, :age, :email, :fav_workout, :password, :fav_food)
+		params.require(:user).permit(:first_name, :last_name, :gender, :age, :email, :fav_workout, :password, :fav_food, :avatar)
 	end
 end

@@ -1,7 +1,11 @@
 <div class="row">
 
     <%= form_for @user do |f| %>
-    	<div>
+      <div>
+        <%= f.file_field :avatar %>
+          <label for="avatar">Profile Picture</label>
+      </div>
+      <div>
     		<%= f.email_field :email %>
           	<label for="email">Email</label>
         </div>
