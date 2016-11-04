@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 			session[:user_id] = @user.id
 			redirect_to user_path(@user)
 		else
-			flash[:error] = "There was an issue creating your account. Double check your info."
+			flash[:error] = @user.errors.full_messages.join(". ")
 			redirect_to root_path
 		end
 
