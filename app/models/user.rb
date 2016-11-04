@@ -1,7 +1,7 @@
 class User < ApplicationRecord
 	has_many :results
 	has_many :challenges
-	has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+	has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "http://i.imgur.com/HU3l4mJ.jpg"
 
 	validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 	validates :first_name, :last_name, length: { minimum: 2, maximum: 63 }, presence: true
