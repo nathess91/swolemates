@@ -53,8 +53,11 @@
         <div class="margin-top-20">
             <%= f.password_field :password, class: "form-control" %>
         </div>
-        <div class="margin-top-20">
-          <%= form.file_field :avatar %>
+        <div class="bold margin-top-20">
+            Upload Profile Picture
+        </div>
+        <div class="upload-image">
+          <%= f.file_field :avatar %>
         </div>
         <div class="margin-top-20">
             <a href="/" class="btn btn-default">Cancel</a>
