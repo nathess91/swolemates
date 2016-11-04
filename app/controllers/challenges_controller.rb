@@ -4,7 +4,14 @@ class ChallengesController < ApplicationController
 		@challenge = Challenge.new
 		@workouts = Workout.all
 		@opponents = User.where.not(id: current_user.id)
-		@results = current_user.results
+		@results = current_user.results.where(workout_id: Workout.first.id)
+	end
+
+	def update_results
+		@results = current_user.results.where(workout_id: params[:workout_id])
+		respond_to do |format|
+      format.js
+    end
 	end
 
 	def index
