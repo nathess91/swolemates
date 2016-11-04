@@ -14,11 +14,7 @@
 			<p><%= @workout.title %></p>
 			<p><%= @workout.description %></p>
 			<p><%= "#{@user_result.qty} #{@user_result.unit}" %></p>
-			<% if @user_result.qty < @opponent_results.qty %>
-			<p> Winner <p>
-				<% else %>
-				<p> Loser <p>
-				<%end%>
+			<p><%= "Winner!" if @winner === @user %></p>
 		</div>
 		<div class="col-md-4">
 			<p><%= image_tag @opponent.avatar.url(:thumb) %></p>
@@ -27,11 +23,6 @@
 			<p><%= @workout.description %></p>
 			<% if @opponent_results %>
 				<p><%= "#{@opponent_results.qty} #{@opponent_results.unit}" %></p>
-				<% if @user_result.qty > @opponent_results.qty %>
-				<p> Winner <p>
-					<% else %>
-					<p> Loser <p>
-					<%end%>
 			<% else %>
 					<%= form_for (@result = Result.new), url: challenge_path(@challenge), method: :put  do |f| %>
 						<%= f.text_field :qty %>
@@ -42,6 +33,7 @@
 						<%= f.submit %>
 					<% end %>
 			<% end %>
+			<p><%= "Winner!" if @winner === @opponent %></p>
 		</div>
 	</div>
 	<div class="row">
