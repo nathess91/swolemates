@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   post '/login',		to: "sessions#create",	as: "login"
 
   get "/workouts",  to: "workouts#index",    as: "workouts"
-  get "/results",        to: "results#index"
-  post "/results",       to: "results#create"
+  get "/users/:id/results",        to: "results#index", as: 'results'
+  post "/users/:id/results",       to: "results#create"
   get "/results/:id",    to: "results#show",     as: 'result'
   get "/challenges",     to: "challenges#index", as: "challenges"
   get "/challenges/new", to: "challenges#new",   as: "new_challenge"

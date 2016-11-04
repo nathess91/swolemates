@@ -19,7 +19,7 @@
           </div>
           <div class="modal-body">
             <h3><%= workout.title %></h3>
-            It took me <%= form_for @result, url: "/results", method: :post  do |f| %>
+            It took me <%= form_for @result, url: "/users/:id/results", method: :post  do |f| %>
              <%= f.text_field :qty %>
              <%= workout.unit_of_competition %>
              <%= f.hidden_field :user_id, :value => current_user.id %>
