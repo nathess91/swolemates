@@ -13,10 +13,11 @@ Workout.create(title: '25 mile ride', description: '25 miles straight of biking'
 Workout.create(title: '800 meter swim', description: '.5 miles straight of swimming', qty: 800, unit: 'meters', unit_of_competition: 'mins')
 Workout.create(title: '1 mile swim', description: '1 mile straight of swimming', qty: 1, unit: 'miles', unit_of_competition: 'mins')
 
-User.create(name: 'Toby', email: 'tzitsman@gmail.com', gender: 'Male', age: 25, fav_food: 'pasta', fav_workout: 'long run')
-User.create(name: 'Natalia', email: 'natalia@fruit.com', gender: 'Female', age: 24, fav_food: 'kale', fav_workout: 'all of them')
+User.create(first_name: 'Toby', last_name: 'Zitsman', email: 'tzitsman@gmail.com', gender: 'Male', age: 25, fav_food: 'pasta', fav_workout: 'long run')
+User.create(first_name: 'Natalia', last_name: 'Hess', email: 'natalia@fruit.com', gender: 'Female', age: 24, fav_food: 'kale', fav_workout: 'all of them')
 
 
 Result.create(user_id: 1, workout_id: 1, qty: 35, unit: 'minutes')
 Result.create(user_id: 1, workout_id: 5, qty: 7, unit: 'minutes')
 Result.create(user_id: 1, workout_id: 4, qty: 75, unit: 'minutes')
+

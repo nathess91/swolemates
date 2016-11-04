@@ -4,12 +4,19 @@ Rails.application.routes.draw do
   resources :users
 
   get "/",					to: "sessions#new"
-  post '/login',					to: "sessions#create",				as: "login"
+  get "/logout",    to: "sessions#destroy"
+  post '/login',		to: "sessions#create",	as: "login"
 
-  get "/workouts", to: "workouts#index",    as: "workouts"
-
-  get "/results", to: "results#index"
-  post "/results", to: "results#create"
-  get "/results/:id", to: "results#show", as: 'result'
+  get "/workouts",  to: "workouts#index",    as: "workouts"
+  get "/results",        to: "results#index"
+  post "/results",       to: "results#create"
+  get "/results/:id",    to: "results#show",     as: 'result'
+  get "/challenges",     to: "challenges#index", as: "challenges"
+  get "/challenges/new", to: "challenges#new",   as: "new_challenge"
+  post "/challenges",    to: "challenges#create"
+  get "/challenges/:id", to: "challenges#show", as: "challenge"
+  put "/challenges/:id", to: "challenges#update"
+  delete "/challenges/:id", to: "challenges#destroy"
+  get "/users/:id",      to: "users#show"
 
 end

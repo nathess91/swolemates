@@ -1,0 +1,18 @@
+<div class="row">
+
+    <%= form_for @user do |f| %>
+    	<div>
+    		<%= f.email_field :email %>
+          	<label for="email">Email</label>
+        </div>
+        <div>
+    		<%= f.text_field :fav_food %>
+          	<label for="fav_food">Favorite Food</label>
+        </div>
+        <div>
+    		<%= f.text_field :fav_workout %>
+          	<label for="fav_workout">Favorite Workout</label>
+        </div>
+        <%= f.submit "Submit" %>
+      <% end %>
+  </div>

@@ -5,11 +5,15 @@ class ResultsController < ApplicationController
 
   def create
     @result = Result.create(results_params)
+
     if @result.save
+      flash[:success] = "Results created successfully."
       redirect_to result_path(@result)
     else
+      flash[:error] = "Houston, we have an error."
       render :new
     end
+    
   end
 
   def show
