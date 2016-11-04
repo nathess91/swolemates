@@ -1,7 +1,8 @@
 class ResultsController < ApplicationController
-  # def index
-  #   @results = Result.find_by(user: params[:user_id])
-  # end
+  def index
+    user = Result.find(params[:id]).user
+    @results = user.results
+  end
 
   def create
     @result = Result.create(results_params)
@@ -13,7 +14,7 @@ class ResultsController < ApplicationController
       flash[:error] = "Houston, we have an error."
       render :new
     end
-    
+
   end
 
   def show

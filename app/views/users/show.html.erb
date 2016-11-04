@@ -14,9 +14,12 @@ Most Recent Workout:
 <h1>Work Out More </h1>
 <% else %>
 <%= @user.results.last.workout.title %>
+
 <% end %>
 <% unless @user.challenges.count == 0 %>
-<%= link_to 'View Challenges', challenges_path(@current_user) %>
+<%= link_to 'View Challenges', challenges_path(@current_user), class: 'btn btn-primary' %>
 <% end %>
-<%= link_to 'Challenge a Friend', new_challenge_path %>
+
+<%= link_to 'Challenge a Friend', new_challenge_path, class: 'btn btn-primary' %>
+
 <%= link_to 'Update Information', edit_user_path(@user) %>
