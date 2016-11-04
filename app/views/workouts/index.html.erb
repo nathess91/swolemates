@@ -2,28 +2,19 @@
 <div class='jumbotron'>
   <div class='container'>
   <% @workouts.each do |workout| %>
-  <% if workout.verb == 'bike' %>
-    <div><h3><%= workout.title %></h3><br>
-      <%= workout.description %>
-      <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modal-<%=workout.id%>">
-        Log Workout
-      </button>
-    </div>
-  <% elsif workout.verb == 'run' %>
-  <div><h3><%= workout.title %></h3><br>
-    <%= workout.description %>
-    <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modal-<%=workout.id%>">
-      Log Workout
-    </button>
-  </div>
-  <% elsif workout.verb == 'swim' %>
-  <div><h3><%= workout.title %></h3><br>
-    <%= workout.description %>
-    <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modal-<%=workout.id%>">
-      Log Workout
-    </button>
-  </div>
-  <% end %>
+    <% ['bike','run','swim'].each do |type| %>
+      <% if workout.verb == type %>
+      <div>
+        <h3><%= workout.title %></h3><br>
+        <p><%= workout.description %></p>
+        <% if current_user %>
+        <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modal-<%=workout.id%>">
+          Log Workout
+        </button>
+        <% end %>
+      </div>
+      <% end %>
+    <% end %>
 
 
     <div class="modal fade" id="modal-<%=workout.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -37,13 +28,15 @@
           </div>
           <div class="modal-body">
             <h3><%= workout.title %></h3>
-            It took me <%= form_for @result, url: "/users/:id/results", method: :post  do |f| %>
-             <%= f.text_field :qty %>
-             <%= workout.unit_of_competition %>
-             <%= f.hidden_field :user_id, :value => current_user.id %>
-             <%= f.hidden_field :workout_id, :value => workout.id %>
-             <%= f.hidden_field :unit, :value => workout.unit_of_competition %>
-            <%= f.submit %>
+            <% if current_user %>
+              It took me <%= form_for @result, url: "/users/:id/results", method: :post  do |f| %>
+               <%= f.text_field :qty %>
+               <%= workout.unit_of_competition %>
+               <%= f.hidden_field :user_id, :value => current_user.id %>
+               <%= f.hidden_field :workout_id, :value => workout.id %>
+               <%= f.hidden_field :unit, :value => workout.unit_of_competition %>
+               <%= f.submit %>
+               <% end %>
              <% end %>
           </div>
         </div>
