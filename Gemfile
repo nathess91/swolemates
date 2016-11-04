@@ -32,6 +32,9 @@ gem 'friendly_id'
 
 gem "paperclip", "~> 5.0.0"
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.5'
+end
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
