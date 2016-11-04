@@ -1,22 +1,37 @@
-<h1> GET YOUR CHALLENGES DONE </h1>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h1> GET YOUR CHALLENGES DONE </h1>
+		</div>
+	</div>
+</div>
 
-<% @challenges.each do |challenge| %>
-	<% if challenge.opponent_results_id == nil %>
-	<div>
-		<h3><%= link_to "Current", challenge_path(challenge)%></h3>
-		<%= "#{challenge.workout.title} vs. #{challenge.opponent.first_name}" %>
-	</div>
-	<% elsif challenge.accepted == nil %>
-	<div>
-	  <h3>Pending</h3>
-		<%= "#{challenge.workout.title} vs. #{challenge.opponent.first_name}" %>
-	</div>
-	<% else %>
-	<div>
-	  <h3><%= link_to "Completed", challenge_path(challenge)%></h3>
-		<%= "#{challenge.workout.title} vs. #{challenge.opponent.first_name}" %>
-	</div>
-	<% end %>
-<% end %>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+		<% @challenges.each do |challenge| %>
+			<% if challenge.opponent_results_id == nil %>
+			<div>
+				<h3><%= link_to "Current", challenge_path(challenge)%></h3>
+				<%= "#{challenge.workout.title} vs. #{challenge.opponent.first_name}" %>
+			</div>
+			<% elsif challenge.accepted == nil %>
+			<div>
+			  <h3>Pending</h3>
+				<%= "#{challenge.workout.title} vs. #{challenge.opponent.first_name}" %>
+			</div>
+			<% else %>
+			<div>
+			  <h3><%= link_to "Completed", challenge_path(challenge)%></h3>
+				<%= "#{challenge.workout.title} vs. #{challenge.opponent.first_name}" %>
+			</div>
+			<% end %>
+		<% end %>
 
-<%= link_to 'New Challenege', new_challenge_path, class: 'btn btn-primary' %>
+		<%= will_paginate @challenges %><br>
+		<%= link_to 'New Challenege', new_challenge_path, class: 'btn btn-primary' %>
+		</div>
+	</div>
+</div>
+
+
