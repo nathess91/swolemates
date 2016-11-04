@@ -2,7 +2,7 @@
 
 <h3> Please sign up! </h3>
 
-<%= form_for (@user = User.new) do |f| %>
+<%= form_for (@user = User.new), :html => { :multipart => true } do |f| %>
     <div class="container well margin-top-20 small-container">
         <div class="bold margin-top-20">
             Name
@@ -45,6 +45,9 @@
         </div>
         <div class="margin-top-20">
             <%= f.password_field :password, class: "form-control" %>
+        </div>
+        <div class="margin-top-20">
+          <%= form.file_field :avatar %>
         </div>
         <div class="margin-top-20">
             <a href="/" class="btn btn-default">Cancel</a>
