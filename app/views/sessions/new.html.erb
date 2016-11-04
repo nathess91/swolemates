@@ -21,7 +21,11 @@
             Gender
         </div>
         <div class="col-xs-12">
-            <%= f.text_field :gender, class: "form-control" %>
+            <%= f.select :gender, [['male'],['female']], class: "form-control" %>
+            <!-- <%= f.label :gender, "Male", :value => "male"  %>
+            <%= f.radio_button :gender, 'Male' %>
+            <%= f.label :autolyse, "Female", :value => "female" %>
+            <%= f.radio_button :gender, 'Female' %> -->
         </div>
         <div class="bold col-xs-12">
             Age
