@@ -34,6 +34,7 @@ gem "paperclip", "~> 5.0.0"
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 # Use Capistrano for deployment
