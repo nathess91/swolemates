@@ -43,6 +43,9 @@ class ChallengesController < ApplicationController
 		@opponent = @challenge.opponent
 		@opponent_results = @challenge.opponent_results
 		@workout = @challenge.workout
+		if @challenge.declare_a_winner
+			@winner = @challenge.declare_a_winner
+		end
 	end
 
 	def update
