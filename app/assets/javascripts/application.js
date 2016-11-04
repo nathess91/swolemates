@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-$(document).ready(function () {
+$(document).on('turbolinks:load', function () {
   var trigger = $('.hamburger'),
       overlay = $('.overlay'),
      isClosed = false;

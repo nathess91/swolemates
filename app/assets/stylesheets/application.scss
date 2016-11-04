@@ -12,6 +12,7 @@
  *
 
  */
+ //= require sessions
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
@@ -97,9 +98,7 @@ html { height: 100%;}
     position: absolute;
     margin-right: -220px;
 }
-/*-------------------------------*/
 /*     Sidebar nav styles        */
-/*-------------------------------*/
 .sidebar-nav {
     position: absolute;
     top: 0;
@@ -195,9 +194,7 @@ html { height: 100%;}
     background-color: #222;
     box-shadow: none;
 }
-/*-------------------------------*/
 /*       Hamburger-Cross         */
-/*-------------------------------*/
 .hamburger {
   position: fixed;
   top: 20px;
@@ -305,9 +302,7 @@ html { height: 100%;}
   -webkit-transform: translate3d(-100px,0,0);
   -webkit-transition: all .35s ease-in-out;
 }
-/*-------------------------------*/
 /*            Overlay            */
-/*-------------------------------*/
 .overlay {
     position: fixed;
     display: none;
