@@ -9,12 +9,14 @@
 <div class="container">
 	<div class="row">
 		<div class="offset-md-2 col-md-4">
+			<p><%= image_tag @user.avatar.url(:thumb) %></p>
 			<p><%= "#{@user.first_name} #{@user.last_name}"%></p>
 			<p><%= @workout.title %></p>
 			<p><%= @workout.description %></p>
 			<p><%= "#{@user_result.qty} #{@user_result.unit}" %></p>
 		</div>
 		<div class="col-md-4">
+			<p><%= image_tag @opponent.avatar.url(:thumb) %></p>
 			<p><%= "#{@opponent.first_name} #{@opponent.last_name}"%></p>
 			<p><%= @workout.title %></p>
 			<p><%= @workout.description %></p>
