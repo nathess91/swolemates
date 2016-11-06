@@ -21,6 +21,7 @@ class ChallengesController < ApplicationController
 				WHERE user_id = #{current_user.id} 
 					 OR opponent_id = #{current_user.id}"
 		)
+		@challenges = Challenge.paginate(:page => params[:page], :per_page => 5)
 	end
 
 	def create
@@ -43,6 +44,9 @@ class ChallengesController < ApplicationController
 		@opponent = @challenge.opponent
 		@opponent_results = @challenge.opponent_results
 		@workout = @challenge.workout
+		if @challenge.declare_a_winner
+			@winner = @challenge.declare_a_winner
+		end
 	end
 
 	def update

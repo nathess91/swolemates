@@ -1,36 +1,63 @@
-<h1>Welcome</h1>
-<div class='jumbotron'>
-  <div class='container'>
-  <% @workouts.each do |workout| %>
-    <div><h3><%= workout.title %></h3><br>
-      <%= workout.description %>
-      <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modal-<%=workout.id%>">
-        Log Workout
-      </button>
-    </div>
-    <div class="modal fade" id="modal-<%=workout.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <h4 class="modal-title" id="myModalLabel">My Workout</h4>
-          </div>
-          <div class="modal-body">
-            <h3><%= workout.title %></h3>
-            It took me <%= form_for @result, url: "/users/:id/results", method: :post  do |f| %>
-             <%= f.text_field :qty %>
-             <%= workout.unit_of_competition %>
-             <%= f.hidden_field :user_id, :value => current_user.id %>
-             <%= f.hidden_field :workout_id, :value => workout.id %>
-             <%= f.hidden_field :unit, :value => workout.unit_of_competition %>
-            <%= f.submit %>
-             <% end %>
+
+<% @workouts.each do |workout| %>
+    <div class="table-container">
+				<table class="table table-filter">
+					<tbody>
+						<tr>
+							<td>
+								<div class="media">
+									<a href="#" class="pull-left">
+                    <% if workout.verb == 'run' %>
+										<img src="https://c1.staticflickr.com/5/4074/4879698252_d0581d68dd_b.jpg" class="image">
+                    <% elsif workout.verb == 'bike' %>
+                    <img src="http://claimyourjourney.com/wp-content/uploads/2012/06/bike.jpg" class="image">
+                    <% elsif workout.verb == 'swim' %>
+                    <img src="
+http://www.nbcolympics.com/sites/default/files/styles/951x536_rectangle/public/field_image/06August2016/maya-dirado-usatsi_8016584.jpg?itok=i_Wq--A6" class="image">
+
+                    <% end %>
+									</a>
+									<div class="media-body">
+										<h4 class="title">
+											<%= workout.title %>
+										</h4>
+										<p class="summary"><%= workout.description %></p>
+                    <button type="button" class="pull-right btn btn-default btn-xs" data-toggle="modal" data-target="#modal-<%=workout.id%>">
+                      Log Workout
+                    </button>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+      <div class="modal fade" id="modal-<%=workout.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel">My Workout</h4>
+            </div>
+            <div class="modal-body">
+              <h3><%= workout.title %></h3>
+              <% if current_user %>
+                It took me <%= form_for @result, url: "/users/:id/results", method: :post  do |f| %>
+                 <%= f.text_field :qty %>
+                 <%= workout.unit_of_competition %>
+                 <%= f.hidden_field :user_id, :value => current_user.id %>
+                 <%= f.hidden_field :workout_id, :value => workout.id %>
+                 <%= f.hidden_field :unit, :value => workout.unit_of_competition %>
+                 <%= f.submit %>
+                 <% end %>
+               <% end %>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  <% end %>
-  </div>
-</div>
+
+      <% end %>
+      </div>
+      </div>

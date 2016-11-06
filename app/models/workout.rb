@@ -3,5 +3,5 @@ class Workout < ApplicationRecord
 	has_many :challenges
 
 	validates :qty, numericality: true, presence: true
-	validates :type, presence: true
+	validates :verb, presence: true
 end
