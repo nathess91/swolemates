@@ -1,3 +1,20 @@
 // Place all the styles related to the Challenges controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.challenge_photo {
+	height: 200px;
+}
+
+.challenge-header, .challenge-tagline {
+	text-align: center;
+	font-family: 'Permanent Marker', cursive;
+}
+
+.align-center{
+	text-align: center;
+}
+
+.small-container {
+	width: 550px !important;
+}
