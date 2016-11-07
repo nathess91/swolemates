@@ -47,3 +47,9 @@ $(".btn-pref .btn").click(function () {
     $(this).removeClass("btn-default").addClass("btn-primary");
 });
 });
+
+$(document).on('turbolinks:load', function() {
+  $("#hide").click(function () {
+    $("#hide").css('display', 'none');
+  })
+})
