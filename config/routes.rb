@@ -11,8 +11,8 @@ Rails.application.routes.draw do
 
   get "/users/:id/results",        to: "results#index", as: 'results'
   post "/users/:id/results",       to: "results#create"
-  delete "users/:id/results/:result_id",     to: "results#destroy", as: 'results_destroy'
-  get "users/:id/results/:result_id",              to: "results#show",  as: 'result'
+  delete "/users/:user_id/results/:id",     to: "results#destroy", as: 'results_destroy'
+  get "/users/:id/results/:result_id",              to: "results#show",  as: 'result'
 
   get "/challenges",     to: "challenges#index", as: "challenges"
   get "/challenges/update_results", as: 'update_results'

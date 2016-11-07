@@ -10,7 +10,7 @@
 							</a>
 							<div class="media-body">
 								<h4 class="title">
-								<%= link_to result.workout.title, result_path(result) %>
+								<%= link_to result.workout.title, result_path(params[:id], result) %>
 								</h4>
 								<p class="summary"><%= result.created_at.to_date %><br><br>
                 <%= link_to 'Log another', workouts_path, class: 'btn-sm btn-info'%>

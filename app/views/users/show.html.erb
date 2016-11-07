@@ -87,7 +87,7 @@
                         <p class="list-group-item-text">
                           <span style="color:green;">Your Results: </span>
                           <%= result.workout.qty %> <%= result.workout.unit %> in <%= result.qty %> <%= result.workout.unit_of_competition %>
-                          <%= link_to url: "/users/user_id/result/id", method: :destroy do %>
+                          <%= link_to results_destroy_path(current_user.id, result.id), method: :delete do %>
                             <span class="pull-right btn btn-danger btn-xs glyphicon glyphicon-remove"></span>
                           <% end %>
                         </p>
