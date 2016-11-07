@@ -13,15 +13,15 @@ class ChallengesController < ApplicationController
     end
 	end
 
-	def index
-		@challenges = Challenge.find_by_sql(
-			"SELECT * 
-				 FROM challenges 
-				WHERE user_id = #{current_user.id} 
-					 OR opponent_id = #{current_user.id}"
-		)
-		@challenges = Challenge.paginate(:page => params[:page], :per_page => 5)
-	end
+	# def index
+	# 	@challenges = Challenge.find_by_sql(
+	# 		"SELECT * 
+	# 			 FROM challenges 
+	# 			WHERE user_id = #{current_user.id} 
+	# 				 OR opponent_id = #{current_user.id}"
+	# 	)
+	# 	@challenges = Challenge.paginate(:page => params[:page], :per_page => 5)
+	# end
 
 	def create
 		challenge = Challenge.create(challenge_params)
