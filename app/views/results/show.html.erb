@@ -1,4 +1,25 @@
-<h1><%= @result.workout.title %></h1>
-<p><%= @user.first_name %></p>
-<p>It took you <%= @result.qty %> <%= @result.unit %> to <%= @result.workout.verb %><%= @result.workout.qty %> <%= @result.workout.unit %>
-<br><br><%= link_to 'Back to results', results_path(@user), class: 'btn btn-default' %>
+<h1>Results for <%= @result.workout.title %></h1>
+<div id="result-well" class="well">
+<%= @result.workout.created_at.strftime("%m-%d-%Y") %> at <%= @result.workout.created_at.strftime("%H:%M") %>
+<br>
+<br>
+<span id="result-number"><b><%= @result.workout.qty %></span> <%= @result.workout.unit %></b>
+<br>
+<br>
+<span class='data'><span style="color:#337ab7;" class="glyphicon glyphicon-time">
+</span>
+<%= @result.qty %> <%= @result.unit %></span>
+<span class='data'><span style="color:#337ab7;" class="glyphicon glyphicon-flash">
+</span>
+<%= @result.workout.verb %></span>
+<span class='data'><span style="color:#337ab7;" class="glyphicon glyphicon-ice-lolly-tasted">
+</span>
+<%= calorie_count %> cal</span>
+<br>
+<br>
+<span class="result-buttons">
+<%= link_to 'Back to Your Results', results_path(@user), class: 'btn btn-primary' %>
+<%= link_to 'New Challenege', "#new-challenge-modal", "data-toggle" => "modal", class: 'btn btn-danger', id: "new-challenge" %>
+</span>
+</div>
+<%= render "challenges/new" %>
