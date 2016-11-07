@@ -1,4 +1,7 @@
 <div class="container">
+  <% if @challenges.length === 0 %>
+    <p> Nothing to see here...Challenge someone!! </p>
+  <% end %>
   <% @challenges.each do |challenge| %>
     <div class="row">
       <div class="col-md-6">

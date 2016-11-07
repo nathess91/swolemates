@@ -33,13 +33,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @challenges = Challenge.find_by_sql(
-			"SELECT * 
-				 FROM challenges 
-				WHERE user_id = #{current_user.id} 
-					 OR opponent_id = #{current_user.id}"
-		)
-		@challenges = Challenge.paginate(:page => params[:page], :per_page => 5)
+    custom_sql = "SELECT * FROM challenges WHERE user_id = #{current_user.id} OR opponent_id = #{current_user.id}"
+    @challenges = Challenge.paginate_by_sql(custom_sql, :page => params[:page], :per_page => 5)
   end
 
 	private
