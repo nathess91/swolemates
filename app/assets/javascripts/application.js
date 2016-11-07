@@ -47,3 +47,13 @@ $(".btn-pref .btn").click(function () {
     $(this).removeClass("btn-default").addClass("btn-primary");
 });
 });
+
+$(document).on('turbolinks:load', function() {
+  var viewportWidth = $(window).width();
+    $(window).resize(function () {
+
+        if (viewportWidth < 1000) {
+            $(".btn").addClass("btn-lg");
+        }
+    });
+});
