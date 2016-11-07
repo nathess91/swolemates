@@ -8,7 +8,7 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-4">
+		<div class='col-md-4 <%= "loser" if @winner === @opponent%> <%= "winner" if @winner === @user%>'>
 			<p><%= image_tag @user.avatar.url(:thumb) %></p>
 			<p><%= "#{@user.first_name} #{@user.last_name}"%></p>
 			<p><%= @workout.title %></p>
@@ -17,7 +17,7 @@
 			<p><%= "Winner!" if @winner === @user %></p>
 			<p><%= "Loser!" if @winner === @opponent %></p>
 		</div>
-		<div class="col-md-4" id="opponent">
+		<div class='col-md-4 <%= "loser" if @winner === @user%> <%= "winner" if @winner === @opponent%>' id="opponent">
 			<p><%= image_tag @opponent.avatar.url(:thumb) %></p>
 			<p><%= "#{@opponent.first_name} #{@opponent.last_name}"%></p>
 			<p><%= @workout.title %></p>
@@ -25,7 +25,7 @@
 			<% if @opponent_results %>
 				<p><%= "#{@opponent_results.qty} #{@opponent_results.unit}" %></p>
 				
-			<% else %>
+			<% elsif current_user == @opponent%>
 					<%= form_for (@result = Result.new), url: challenge_path(@challenge), method: :put  do |f| %>
 						<%= f.text_field :qty %>
 						<%= @workout.unit_of_competition %>
