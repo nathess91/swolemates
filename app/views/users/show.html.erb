@@ -37,6 +37,7 @@
       <div class="tab-content">
         <div class="tab-pane fade in active" id="tab1">
           <h3>Most Recent Workout</h3>
+
           <br>
           <% if @user.results.count == 0 %>
             <p><i>Nothing to see here...Work out more!!</i></p>
@@ -56,5 +57,5 @@
       </div>
       <br>
       <%= link_to 'Create New Challenge', new_challenge_path, class: "btn btn-danger" %>
-
+        <% link_to 'Log another', workouts_path, class: 'btn btn-info'%>
     </div>
