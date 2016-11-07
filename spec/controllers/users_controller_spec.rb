@@ -29,4 +29,13 @@ RSpec.describe UsersController, type: :controller do
 			end
 		end
 	end
+
+	describe "#update" do 
+		before do
+			@user = User.last
+		end
+		it "Should be a User" do
+			expect(@user).to be_a(User)
+		end
+	end
 end
