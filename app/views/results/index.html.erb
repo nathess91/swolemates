@@ -1,3 +1,24 @@
 <% @results.each do |result| %>
-<div> <%= link_to result.workout.title, result_path(result), class: 'btn btn-primary' %>
-  <% end %>
+  <div class="table-container">
+		<table class="table table-filter">
+			<tbody>
+				<tr>
+					<td>
+						<div class="media">
+							<a href="#" class="pull-left">
+                <img src='www.google.com' height='100px'>
+							</a>
+							<div class="media-body">
+								<h4 class="title">
+								<%= link_to result.workout.title, result_path(params[:id], result) %>
+								</h4>
+								<p class="summary"><%= result.created_at.to_date %><br><br>
+                <%= link_to 'Log another', workouts_path, class: 'btn-sm btn-info'%>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+<% end %>

@@ -8,9 +8,12 @@ Rails.application.routes.draw do
   post '/login',		to: "sessions#create",	as: "login"
 
   get "/workouts",  to: "workouts#index",    as: "workouts"
+
   get "/users/:id/results",        to: "results#index", as: 'results'
   post "/users/:id/results",       to: "results#create"
-  get "/results/:id",    to: "results#show",     as: 'result'
+  delete "/users/:user_id/results/:id",     to: "results#destroy", as: 'results_destroy'
+  get "/users/:id/results/:result_id",              to: "results#show",  as: 'result'
+
   get "/challenges",     to: "challenges#index", as: "challenges"
   get "/challenges/update_results", as: 'update_results'
   get "/challenges/new", to: "challenges#new",   as: "new_challenge"
@@ -18,6 +21,7 @@ Rails.application.routes.draw do
   get "/challenges/:id", to: "challenges#show", as: "challenge"
   put "/challenges/:id", to: "challenges#update"
   delete "/challenges/:id", to: "challenges#destroy"
+
   get "/users/:id",      to: "users#show"
 
 end

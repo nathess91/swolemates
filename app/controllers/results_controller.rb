@@ -1,6 +1,6 @@
 class ResultsController < ApplicationController
   def index
-    user = Result.find(params[:id]).user
+    user = User.find(params[:id])
     @results = user.results
   end
 
@@ -9,7 +9,7 @@ class ResultsController < ApplicationController
 
     if @result.save
       flash[:success] = "Results created successfully."
-      redirect_to result_path(@result)
+      redirect_to result_path(current_user.id, @result)
     else
       flash[:error] = "Houston, we have an error."
       render :new
@@ -18,7 +18,13 @@ class ResultsController < ApplicationController
   end
 
   def show
-    @result = Result.find(params[:id])
+    @result = Result.find(params[:result_id])
+    @user = @result.user
+  end
+
+  def destroy
+    @result = User.find(params[:user_id]).results.find(params[:id]).destroy
+    redirect_to user_path(current_user)
   end
 
   private
