@@ -1,0 +1,24 @@
+<div class="container">
+  <% @challenges.each do |challenge| %>
+    <div class="row">
+      <div class="col-md-6">
+        <% status = challenge.opponent_results_id === nil ? "Active" : "Completed" %>
+        <div>
+          <h3><%= link_to "#{status} Challenge", challenge_path(challenge)%> </h3>
+          <%= "#{challenge.workout.title} vs " %> <%= current_user.id === challenge.user.id ? "#{challenge.opponent.first_name}" : "#{challenge.user.first_name}"%>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <% if challenge.workout.verb == 'run' %>
+          <% photo = "https://c1.staticflickr.com/5/4074/4879698252_d0581d68dd_b.jpg" %>
+        <% elsif challenge.workout.verb == 'bike' %>
+          <%photo = "http://claimyourjourney.com/wp-content/uploads/2012/06/bike.jpg" %>
+        <% elsif challenge.workout.verb == 'swim' %>
+           <% photo ="http://www.nbcolympics.com/sites/default/files/styles/951x536_rectangle/public/field_image/06August2016/maya-dirado-usatsi_8016584.jpg?itok=i_Wq--A6" %>
+        <% end %>
+        <%= image_tag(photo, class: "challenge_photo pull-right") %>
+      </div>
+    </div>
+    <br>
+  <% end %>
+</div>

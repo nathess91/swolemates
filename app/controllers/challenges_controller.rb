@@ -1,7 +1,6 @@
 class ChallengesController < ApplicationController
 
 	def new
-		@challenge = Challenge.new
 		@workouts = Workout.all
 		@opponents = User.where.not(id: current_user.id)
 		@results = current_user.results.where(workout_id: Workout.first.id)
