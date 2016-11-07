@@ -1,0 +1,48 @@
+
+<!-- Add Challenge Modal -->
+<div id="new-challenge-modal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">New Challenge</h4>
+            </div>
+            <div class="modal-body">
+                <%= form_for (@challenge = Challenge.new) do |f| %>
+                    <% @workouts = Workout.all %>
+                    <% @opponents = User.where.not(id: current_user.id) %>
+                    <% @results = current_user.results.where(workout_id: Workout.first.id) %>
+                    <div class="container well margin-top-20 small-container">
+                        <div class="bold margin-top-20">
+                            Workout
+                        </div>
+                        <div class="margin-top-20">
+                            <%= f.select :workout_id, @workouts.map {|workout| [workout.title, workout.id]} %>
+                        </div>
+                        <div class="bold margin-top-20">
+                            Opponent
+                        </div>
+                        <div class="margin-top-20">
+                            <%= f.select :opponent_id, @opponents.map {|opponent| ["#{opponent.first_name} #{opponent.last_name}", opponent.id]} %>
+                        </div>
+                        <div class="bold margin-top-20">
+                            My Results
+                        </div>
+                        <div class="margin-top-20">
+                            <%= f.select :result_id, @results.map {|result| [result.workout.title, result.id]} %>
+                        </div>
+                        <div class="margin-top-20">
+                            <%= f.hidden_field :user_id, :value => session[:user_id] %>
+                        </div>
+                        <br>
+                        <div class="margin-top-20">
+                            <a href="/" class="btn btn-default">Cancel</a>
+                            <%= f.submit "Create Challenge", class: "btn btn-primary" %>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--/Add Challenge Modal
