@@ -1,6 +1,6 @@
 class ResultsController < ApplicationController
   def index
-    user = Result.find(params[:id]).user
+    user = User.find(params[:id])
     @results = user.results
   end
 
@@ -19,6 +19,7 @@ class ResultsController < ApplicationController
 
   def show
     @result = Result.find(params[:id])
+    @user = @result.user
   end
 
   private
