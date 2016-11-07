@@ -19,6 +19,7 @@ class ResultsController < ApplicationController
 
   def show
     @result = Result.find(params[:id])
+    @user = @result.user
   end
 
   def destroy

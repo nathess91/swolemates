@@ -1,3 +1,19 @@
 // Place all the styles related to the Challenges controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+p
+{
+	text-align: center;
+}
+
+img
+{
+	vertical-align: middle;
+	width: 400px;
+	height: 400px;
+}
+
+#opponent
+{
+	float: right;
+}
