@@ -55,7 +55,9 @@
       <%= render "partials/success_flash" %>
       <div class="row">
       <%= yield %>
-      <%= render "challenges/new" %>
+      <% if current_user then %>
+        <%= render "challenges/new" %>
+      <% end %>
       </div>
     </div>
 
