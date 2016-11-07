@@ -1,3 +1,25 @@
 <% @results.each do |result| %>
-<div> <%= link_to result.workout.title, result_path(result), class: 'btn btn-primary' %>
-  <% end %>
+      <div class="table-container">
+  				<table class="table table-filter">
+  					<tbody>
+  						<tr>
+  							<td>
+  								<div class="media">
+  									<a href="#" class="pull-left">
+                      <img src='www.google.com' height='100px'>
+  									</a>
+  									<div class="media-body">
+  										<h4 class="title">
+  										<%= link_to result.workout.title, result_path(result) %>
+  										</h4>
+  										<p class="summary"><%= result.qty %><% result.unit %></p>
+                      <%= link_to 'Log another', workouts_path, class: 'btn btn-info'%>
+                      </button>
+  									</div>
+  								</div>
+  							</td>
+  						</tr>
+  					</tbody>
+  				</table>
+  			</div>
+        <% end %>
