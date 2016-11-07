@@ -22,6 +22,11 @@ class ResultsController < ApplicationController
     @user = @result.user
   end
 
+  def destroy
+    @result = Result.find(params[:id]).destroy
+    asdfasdf
+  end
+
   private
 
   def results_params
