@@ -59,8 +59,8 @@
                               </div>
 
                               <div class="media-body">
-                                <h4 class="title">
-                                  <%= @user.results.last.workout.title %> <%= @user.results.last.workout.created_at.strftime("%m-%d-%Y") %>
+                                <h4 class="header">
+                                  <span class="workout-title"><%= @user.results.last.workout.title %></span> <%= @user.results.last.workout.created_at.strftime("%m-%d-%Y") %>
                                 </h4>
                                 <p class="summary">
                                   <i><%= @user.results.last.workout.description %></i>
@@ -83,7 +83,7 @@
                   <div class="list-group">
                     <% @user.results.each do |result| %>
                       <div class="list-group-item list-group-item-action">
-                        <h5 class="list-group-item-heading"><b><%= result.workout.title %></b> <%= result.workout.created_at.strftime("%m-%d-%Y") %> </h5>
+                        <h5 class="list-group-item-heading"><span class="workout-title"><%= result.workout.title %></span> <%= result.workout.created_at.strftime("%m-%d-%Y") %> </h5>
                         <p class="list-group-item-text">
                           <span style="color:green;">Your Results: </span>
                           <%= result.workout.qty %> <%= result.workout.unit %> in <%= result.qty %> <%= result.workout.unit_of_competition %>
@@ -98,14 +98,7 @@
         </div>
 
         <div class="tab-pane fade in <%="#{'active' if params[:active_tab] == 'challenges'}"%>" id="tab2">
-
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12">
-                  <h3 class="challenge-tagline"> Will you rise up? </h3>
-              </div>
-            </div>
-          </div>
+                  <h3 class="challenge-tagline"> My Challenges </h3>
           <br>
           <%= render "partials/index_challenges" %>
           <div class="row">
@@ -116,8 +109,8 @@
         </div>
       </div>
       <br>
-      <%= link_to 'New Challenege', "#new-challenge-modal", "data-toggle" => "modal", class: 'btn btn-danger' %>
-      <%= link_to 'Log Another Workout', workouts_path, class: 'btn btn-info'%>
+      <%= link_to 'Log Another Workout', workouts_path, class: 'btn btn-primary'%>
+      <%= link_to 'New Challenege', "#new-challenge-modal", "data-toggle" => "modal", class: 'btn btn-warning' %>
 
     </div>
 

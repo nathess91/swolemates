@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Swolemates</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -24,7 +25,7 @@
                           <class="navbar-brand"><%= link_to "Swolemates", root_path, :class => "nav-title" %>
 
                    </li>
-                   <li><a href="#">About Swolemates</a></li>
+                   <li><%= link_to "About Swolemates", root_path %></li>
                    <li><%= link_to "Workouts", workouts_path %></li>
                    <% if current_user %>
                    <li><%= link_to "Profile", user_path(current_user) %></li>

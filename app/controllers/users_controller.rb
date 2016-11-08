@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 			flash[:success] = "Account successfully updated!"
     	redirect_to @user
 		else
-			flash[:error] = "Hold up. There was an issue updating your info."
+			flash[:error] = @user.errors.full_messages.join(". ")
 			redirect_to :back
 		end
 

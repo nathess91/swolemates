@@ -7,12 +7,12 @@ class ResultsController < ApplicationController
   def create
     @result = Result.create(results_params)
 
-    if @result.save
+    if @result.valid?
       flash[:success] = "Results created successfully."
       redirect_to result_path(current_user.id, @result)
     else
-      flash[:error] = "Houston, we have an error."
-      render :new
+      flash[:error] = @result.errors.full_messages.join(". ")
+      redirect_to :back
     end
 
   end
