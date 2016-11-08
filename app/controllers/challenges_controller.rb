@@ -15,9 +15,9 @@ class ChallengesController < ApplicationController
 
 	# def index
 	# 	@challenges = Challenge.find_by_sql(
-	# 		"SELECT * 
-	# 			 FROM challenges 
-	# 			WHERE user_id = #{current_user.id} 
+	# 		"SELECT *
+	# 			 FROM challenges
+	# 			WHERE user_id = #{current_user.id}
 	# 				 OR opponent_id = #{current_user.id}"
 	# 	)
 	# 	@challenges = Challenge.paginate(:page => params[:page], :per_page => 5)
@@ -30,7 +30,7 @@ class ChallengesController < ApplicationController
 			flash[:success] = "New challenge successfully created! Go find your Swolemate!"
 			redirect_to challenge_path(challenge)
 		else
-			flash[:error] = "Oops. There was a problem making a new challenge."
+			flash[:error] = challenge.errors.full_messages.join(". ")
 			redirect_to :back
 		end
 

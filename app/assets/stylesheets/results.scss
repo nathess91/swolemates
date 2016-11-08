@@ -21,38 +21,3 @@
 .glyphicon-ice-lolly-tasted {
   margin-left: 20px;
 }
-
-@media screen and (max-width: 1000px) {
-  .data {
-    display: block;
-    font-size: 1.4em;
-    text-align: center;
-  }
-  #result-well {
-    width: 100%;
-    font-size: 3.5em;
-    height: 83vh;
-    position: relative;
-  }
-  #result-number {
-    font-size: 6em;
-  }
-  .btn {
-    width: 20em;
-    font-size: .6em !important;
-    margin: 0;
-  }
-  .result-buttons {
-    top: 80vh;
-    left: 50vw;
-  }
-  #new-challenge {
-    margin-left: -13px!important;
-  }
-}
-@media screen and (min-width: 1000px) {
-  .result-buttons {
-    width: inherit;
-    height: inherit;
-  }
-}

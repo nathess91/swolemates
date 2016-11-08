@@ -1,56 +1,33 @@
-<div class="container">
+<div class="fluid-container">
+	<h1> Battle Royale: <%= @workout.title %> </h1>
 	<div class="row">
-		<div class="col-md-12">
-			<h1> BATTLE ROYALE </h1>
-		</div>
-	</div>
-</div>
-
-<div class="container">
-	<div class="row" id="arena">
-		<div class='col-md-4 <%= "loser" if @winner === @opponent%> <%= "winner" if @winner === @user%>'>
+		<div class= 'col-md-4 col-sm-12'>
 			<p class= "challengep"><%= image_tag @user.avatar.url(:thumb) %></p>
-			<p class= "challengep"><%= "#{@user.first_name} #{@user.last_name}"%></p>
-			<p class= "challengep"><%= @workout.title %></p>
-			<p class= "challengep"><%= @workout.description %></p>
-			<p class= "challengep"><%= "#{@user_result.qty} #{@user_result.unit}" %></p>
+			<h4 class= "challengep"><%= @user.first_name %> </h4>
+			<b style='color:green;'>Your Result: </b><br>
+			<span style='color:#337ab7;' class='glyphicon glyphicon-time'></span>
+			<%= @challenge.result.qty %> <%= @challenge.result.unit %>
 			<p class= "challengep"><%= "Winner!" if @winner === @user %></p>
 			<p class= "challengep"><%= "Loser!" if @winner === @opponent %></p>
 		</div>
-		<div class='col-md-4 <%= "loser" if @winner === @user%> <%= "winner" if @winner === @opponent%>' id="opponent">
+
+		<div class= 'col-md-4 col-sm-12'>
+			<span id='vs'><%= @workout.verb %> <%= @workout.qty %> <%= @workout.unit %></span>
+			<h1> VS </h1>
+		</div>
+
+
+		<div class= 'col-md-4 col-sm-12'>
 			<p class= "challengep"><%= image_tag @opponent.avatar.url(:thumb) %></p>
-			<p class= "challengep"><%= "#{@opponent.first_name} #{@opponent.last_name}"%></p>
-			<p class= "challengep"><%= @workout.title %></p>
-			<p class= "challengep"><%= @workout.description %></p>
+			<h4 class= "challengep"><%= @opponent.first_name %> </h4>
+			<b style='color:green;'>Their Result: </b><br>
 			<% if @opponent_results %>
-				<p class= "challengep"><%= "#{@opponent_results.qty} #{@opponent_results.unit}" %></p>
-
-			<% elsif current_user == @opponent%>
-					<%= form_for (@result = Result.new), url: challenge_path(@challenge), method: :put  do |f| %>
-						<%= f.text_field :qty %>
-						<%= @workout.unit_of_competition %>
-						<%= f.hidden_field :user_id, :value => current_user.id %>
-						<%= f.hidden_field :workout_id, :value => @workout.id %>
-						<%= f.hidden_field :unit, :value => @workout.unit_of_competition %>
-						<%= f.submit %>
-					<% end %>
+			<span style='color:#337ab7;' class='glyphicon glyphicon-time'></span>
+			<%= @challenge.opponent_results.qty %> <%= @challenge.opponent_results.unit %>
+			<% else %>
+			<p class='challengep'><img style='width:25px !important; height:25px !important; margin-left:12vw;' src='https://1.bp.blogspot.com/-rEeXiV82AUE/VuGkY15TF7I/AAAAAAAAAUk/iBviJW2ebVw/s200/spinningwheel.gif'></p>
 			<% end %>
-			<p class= "challengep"><%= "Winner!" if @winner === @opponent %></p>
-			<p class= "challengep"><%= "Loser!" if @winner === @user %></p>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-md-4">
-			<%= link_to "Back to challenges", user_path(current_user) %>
-		</div>
-	</div>
-	<% if @challenge.accepted.nil? %>
-	<% if current_user == @opponent %>
-	<div class="row">
-		<%= button_to "Be a lil bitch (we'll think less of you)", challenge_path(@challenge), {:method => :delete, class: "btn btn-danger"}  %>
-	</div>
-	<% end %>
-	<% end %>
-
-
+			<%= link_to "Back to Challenges", user_path(current_user), class: 'btn btn-primary'%>
 </div>
