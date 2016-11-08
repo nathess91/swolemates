@@ -27,7 +27,7 @@
     background-color: rgba(255, 255, 255, 1);
 }
 .card.hovercard .card-background {
-    height: 130px;
+    height: 135px;
 }
 .card-background img {
     -webkit-filter: blur(25px);
@@ -97,4 +97,8 @@
 .update-pic {
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+#edit-button {
+  border: none;
 }
