@@ -28,3 +28,13 @@ Postgresql <br>
 2. bundle install <br>
 3. rake db:setup <br> 
 4. rails server <br>
+
+# Key User Stories <br>
+User can...<br>
+1. Log workout <br>
+2. View prior workout results <br>
+3. View full gamut of possible workouts <br>
+4. Challenge other users to completed workout <br>
+5. Declare a winner based on the results <br>
+6. Create username/login<br>
+Full Trello Board: https://trello.com/b/nVY0T1JK/so-swole
