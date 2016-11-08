@@ -83,10 +83,24 @@
 }
 
 .title-text-h2{
-  font-size: 36px;
+  font-size: 3em;
 }
 
 .title-text-p{
-  font-size: 24px;
+  font-size: 2em;
   text-align: left;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .title-text-h2{
+    font-size: 2em;
+  }
+  .title-text-p{
+    font-size: 1em;
+    text-align: left;
+  }
+  .register{
+    top: -500px;
+    z-index: 10 !important;
+  }
 }
