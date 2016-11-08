@@ -29,7 +29,7 @@
                             My Results
                         </div>
                         <div class="margin-top-20">
-                            <%= f.select :result_id, @results.map {|result| [result.workout.title, result.id]} %>
+                            <%= f.select :result_id, @results.map {|result| ["#{result.workout.title}", result.id]} %>
                         </div>
                         <div class="margin-top-20">
                             <%= f.hidden_field :user_id, :value => session[:user_id] %>

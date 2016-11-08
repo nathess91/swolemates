@@ -112,11 +112,10 @@
             <div class="col-md-12 align-center">
               <%= will_paginate @challenges, params: {active_tab: 'challenges'} %><br>
             </div>
-          </div>  
+          </div>
         </div>
       </div>
       <br>
-      <% link_to 'Log another', workouts_path, class: 'btn btn-info'%>
       <%= link_to 'New Challenege', "#new-challenge-modal", "data-toggle" => "modal", class: 'btn btn-danger' %>
       <%= link_to 'Log Another Workout', workouts_path, class: 'btn btn-info'%>
 
