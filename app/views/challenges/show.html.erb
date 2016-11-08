@@ -4,9 +4,9 @@
 		<div class= 'col-md-4 col-sm-12'>
 			<p class= "challengep"><%= image_tag @user.avatar.url(:thumb) %></p>
 			<h4 class= "challengep"><%= @user.first_name %> </h4>
-			<b style='color:green;'>Result: </b><br>
-			<span style='color:#337ab7;' class='glyphicon glyphicon-time'></span>
-			<%= @challenge.result.qty %> <%= @challenge.result.unit %>
+			<b style='color:green; font-size:40px'>Result: </b><br>
+			<span style='color:#337ab7;font-size:30px' class='glyphicon glyphicon-time'></span>
+			<span style='font-size:30px'><%= @challenge.result.qty %> <%= @challenge.result.unit %></span>
 			<p class= "challengep"><%= "Winner!" if @winner === @user %></p>
 			<p class= "challengep"><%= "Loser!" if @winner === @opponent %></p>
 			<p class= "challengep"><%= "You Both Suck!" if @winner === 'none' %></p>
