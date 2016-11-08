@@ -23,5 +23,5 @@ Database: <br>
 Postgresql
 
 
-Database ERD: 
+Database ERD: <br>
 ![erd image](http://i.imgur.com/cs8eal6.png)
