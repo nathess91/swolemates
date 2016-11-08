@@ -17,15 +17,34 @@
 .small-container {
 	width: 550px !important;
 }
-
-
-.challegep {
-	text-align: center;
+.vs {
+	font-size: 40px;
+	position: absolute;
+	top: 13vh;
+}
+#heading {
+	font-size: 80px;
+	padding-left: 6vw;
+}
+.glyphicon {
+	color:#337ab7;
 	font-size: 30px;
+	align: center;
+	padding-left: 8vw;
 }
 
-img
-{
+.result {
+	font-size: 40px;
+	color: green;
+	padding-left: 8vw;
+}
+
+.challengep {
+	text-align: center;
+	font-size: 30px !important;
+}
+
+img {
 	vertical-align: middle;
 	width: 300px;
 	height: 300px;
