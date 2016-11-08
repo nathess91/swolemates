@@ -37,12 +37,10 @@
 }
 .glyphicon-time {
 	color: white;
-	font-size: 30px;
 	align: center;
-	padding-left: 8vw;
 }
 .data {
-	background-color: rgba(0,0,0,.3);
+	text-align: center;
 	border-radius: 10px;
 }
 .result {
@@ -58,53 +56,12 @@
 }
 
 @media (max-width: 700px) {
-	.result {
-		padding-left: 30vw;
+	.resultbtn {
+		display: block !important;
 	}
-	.glyphicon-time {
-		padding-left: 28vw;
-	}
-	.vs {
-		position: relative;
-		top: 0;
-		display: block;
-		text-align: center;
-		padding-top: 50px;
-		padding-bottom: 50px;
-		color: black;
-	}
-	img {
-		width: 150px;
-		height: 150px;
-	}
-	#heading {
-		font-size: 40px;
-		display: block;
-		text-align: center;
-	}
-	#title {
-		font-size: 40px;
-		display: block;
-		text-align: center;
-	}
-	.btn {
-		width: 350px;
-		height: 55px;
-		border-radius: 10px;
-		font-size: 25px !important;
-		vertical-align: center;
-	}
-	.fluid-container {
-		background-image: none;
-	}
-	#title, #heading, .result, .challengep {
-		color: black;
-	}
-	.glyphicon {
-		color: #217FFF;
-	}
-	.data {
-		background-color: white;
+	#new-challenge {
+		margin-top: 5px;
+		margin: 0 !important;
 	}
 }
 img {

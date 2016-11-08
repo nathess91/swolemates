@@ -18,8 +18,9 @@
 <br>
 <br>
 <span class="result-buttons">
-<%= link_to 'Back to Your Results', results_path(@user), class: 'btn btn-primary' %>
-<%= link_to 'New Challenege', "#new-challenge-modal", "data-toggle" => "modal", class: 'btn btn-warning', id: "new-challenge" %>
+<%= link_to 'Back to Your Results', results_path(@user), class: 'btn btn-primary resultbtn' %>
+
+<%= link_to 'New Challenege', "#new-challenge-modal", "data-toggle" => "modal", class: 'btn btn-warning resultbtn', id: "new-challenge" %>
 </span>
 </div>
 <%= render "challenges/new" %>
