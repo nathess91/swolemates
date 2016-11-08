@@ -1,10 +1,10 @@
 // Place all the styles related to the Challenges controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.fluid-container {
-	background-image: url('http://www.omaa.org.uk/sites/default/files/Boxing-008.jpg');
-	background-repeat: none;
-}
+// .fluid-container {
+// 	background-image: url('http://www.omaa.org.uk/sites/default/files/Boxing-008.jpg');
+// 	background-repeat: none;
+// }
 
 .challenge_photo {
 	height: 200px;
@@ -19,7 +19,7 @@
 }
 #title {
 	font-size: 75px;
-	color: white;
+	color: black;
 }
 .small-container {
 	width: 550px !important;
@@ -28,34 +28,77 @@
 	font-size: 40px;
 	position: absolute;
 	top: 8vh;
-	color: white;
+	color: black;
 }
 #heading {
 	font-size: 75px;
 	padding-left: 6vw;
-	color: white;
-}
-.glyphicon-time {
-	color: white;
-	align: center;
-}
-.data {
-	text-align: center;
-	border-radius: 10px;
+	color: black;
 }
 .result {
 	font-size: 40px;
-	color: white;
+	color: black;
 	padding-left: 8vw;
 }
-
+.challenge-gif {
+	width:40px;
+	height:40px;
+	margin-left: 12vw;
+}
 .challengep {
 	text-align: center;
 	font-size: 30px !important;
-	color: white;
+	color: black;
 }
 
 @media (max-width: 700px) {
+	.result {
+		padding-left: 30vw;
+	}
+	.glyphicon-time {
+		padding-left: 28vw;
+	}
+	.vs {
+		position: relative;
+		top: 0;
+		display: block;
+		text-align: center;
+		padding-top: 50px;
+		padding-bottom: 50px;
+		color: black;
+	}
+	#heading {
+		font-size: 40px;
+		display: block;
+		text-align: center;
+	}
+	#title {
+		font-size: 40px;
+		display: block;
+		text-align: center;
+	}
+	.btn {
+		width: 350px;
+		height: 55px;
+		border-radius: 10px;
+		font-size: 25px !important;
+		vertical-align: center;
+	}
+	.fluid-container {
+		background-image: none;
+	}
+	#title, #heading, .result, .challengep {
+		color: black;
+	}
+	.glyphicon {
+		color: #217FFF;
+	}
+	.data {
+		background-color: black;
+	}
+	.challenge-gif {
+		margin-left: 43vw;
+	}
 	.resultbtn {
 		display: block !important;
 	}
@@ -74,15 +117,12 @@ img {
 {
 	float: right;
 }
-
-
-
-.loser
-{
-	background-color: red;
-}
-
-.winner
-{
-	background-color: lime;
-}
+// .loser
+// {
+// 	background-color: red;
+// }
+//
+// .winner
+// {
+// 	background-color: lime;
+// }
