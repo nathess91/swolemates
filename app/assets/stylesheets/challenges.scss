@@ -38,13 +38,7 @@
 .glyphicon-time {
 	color: black;
 	font-size: 30px;
-	align: center;
-	padding-left: 8vw;
 }
-// .data {
-// 	background-color: rgba(0,0,0,.3);
-// 	border-radius: 10px;
-// }
 .result {
 	font-size: 40px;
 	color: black;
@@ -76,10 +70,6 @@
 		padding-top: 50px;
 		padding-bottom: 50px;
 		color: black;
-	}
-	.img {
-		width: 150px;
-		height: 150px;
 	}
 	#heading {
 		font-size: 40px;
@@ -113,6 +103,13 @@
 	.challenge-gif {
 		margin-left: 43vw;
 	}
+	.resultbtn {
+		display: block !important;
+	}
+	#new-challenge {
+		margin-top: 5px;
+		margin: 0 !important;
+	}
 }
 img {
 	vertical-align: middle;
@@ -124,15 +121,12 @@ img {
 {
 	float: right;
 }
-
-
-
-.loser
-{
-	background-color: red;
-}
-
-.winner
-{
-	background-color: lime;
-}
+// .loser
+// {
+// 	background-color: red;
+// }
+//
+// .winner
+// {
+// 	background-color: lime;
+// }
