@@ -2,10 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#login_form {
-  position: absolute;
-  left: 12vw;
-}
 .wrapper {
   position: relative
 }
@@ -18,11 +14,93 @@
     height: 150px;
     margin: 0 0 15px 15px
   }
-  #login_form {
-    position: absolute !important;
-    top: 0 !important;
-    right: 0 !important;
-    width: 300px !important;
-  }
+}
 
+.cover-photo {
+  width: 100%;
+}
+
+.title {
+  font-family: 'Permanent Marker', cursive;
+  text-align: center;
+  font-size: 48px;
+}
+
+.subtitle{
+  font-family: 'Permanent Marker', cursive;
+  text-align: center;
+}
+
+.signup-container{
+  background-color: rgba(0,0,0,0) !important;
+  border: 0px !important;
+  color: white;
+}
+
+.register{
+  top: -775px;
+  z-index: 10 !important;
+}
+
+.signup{
+  color: white;
+  left: 30px;
+  position: relative;
+  z-index: 10 !important;
+}
+
+.upload-image{
+  left: 20px;
+  position: relative;
+  z-index: 5;
+}
+
+#user_gender{
+  color: black !important;
+}
+
+.inline-block{
+  display: inline-block !important;
+}
+
+.width-50{
+  width: 50% !important;
+}
+
+.center_vertical{
+  vertical-align: center !important;
+}
+
+.margin-top-5{
+  margin-top: 5px;
+}
+
+.title-text{
+  color: white;
+  position: relative;
+  left: 35px;
+  background-color: rgba(75,75,75,.6)
+}
+
+.title-text-h2{
+  font-size: 3em;
+}
+
+.title-text-p{
+  font-size: 2em;
+  text-align: left;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .title-text-h2{
+    font-size: 2em;
+  }
+  .title-text-p{
+    font-size: 1em;
+    text-align: left;
+  }
+  .register{
+    top: -500px;
+    z-index: 10 !important;
+  }
 }
