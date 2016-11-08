@@ -7,24 +7,24 @@
 </div>
 
 <div class="container">
-	<div class="row">
+	<div class="row" id="arena">
 		<div class='col-md-4 <%= "loser" if @winner === @opponent%> <%= "winner" if @winner === @user%>'>
-			<p><%= image_tag @user.avatar.url(:thumb) %></p>
-			<p><%= "#{@user.first_name} #{@user.last_name}"%></p>
-			<p><%= @workout.title %></p>
-			<p><%= @workout.description %></p>
-			<p><%= "#{@user_result.qty} #{@user_result.unit}" %></p>
-			<p><%= "Winner!" if @winner === @user %></p>
-			<p><%= "Loser!" if @winner === @opponent %></p>
+			<p class= "challengep"><%= image_tag @user.avatar.url(:thumb) %></p>
+			<p class= "challengep"><%= "#{@user.first_name} #{@user.last_name}"%></p>
+			<p class= "challengep"><%= @workout.title %></p>
+			<p class= "challengep"><%= @workout.description %></p>
+			<p class= "challengep"><%= "#{@user_result.qty} #{@user_result.unit}" %></p>
+			<p class= "challengep"><%= "Winner!" if @winner === @user %></p>
+			<p class= "challengep"><%= "Loser!" if @winner === @opponent %></p>
 		</div>
 		<div class='col-md-4 <%= "loser" if @winner === @user%> <%= "winner" if @winner === @opponent%>' id="opponent">
-			<p><%= image_tag @opponent.avatar.url(:thumb) %></p>
-			<p><%= "#{@opponent.first_name} #{@opponent.last_name}"%></p>
-			<p><%= @workout.title %></p>
-			<p><%= @workout.description %></p>
+			<p class= "challengep"><%= image_tag @opponent.avatar.url(:thumb) %></p>
+			<p class= "challengep"><%= "#{@opponent.first_name} #{@opponent.last_name}"%></p>
+			<p class= "challengep"><%= @workout.title %></p>
+			<p class= "challengep"><%= @workout.description %></p>
 			<% if @opponent_results %>
-				<p><%= "#{@opponent_results.qty} #{@opponent_results.unit}" %></p>
-				
+				<p class= "challengep"><%= "#{@opponent_results.qty} #{@opponent_results.unit}" %></p>
+
 			<% elsif current_user == @opponent%>
 					<%= form_for (@result = Result.new), url: challenge_path(@challenge), method: :put  do |f| %>
 						<%= f.text_field :qty %>
@@ -35,8 +35,8 @@
 						<%= f.submit %>
 					<% end %>
 			<% end %>
-			<p><%= "Winner!" if @winner === @opponent %></p>
-			<p><%= "Loser!" if @winner === @user %></p>
+			<p class= "challengep"><%= "Winner!" if @winner === @opponent %></p>
+			<p class= "challengep"><%= "Loser!" if @winner === @user %></p>
 		</div>
 	</div>
 	<div class="row">

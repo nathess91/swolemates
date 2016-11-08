@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
   $(document).on 'change', '#challenge_workout_id', (evt) ->
-    $.ajax 'update_results',
+    $.ajax '/challenges/update_results',
       type: 'GET'
       dataType: 'script'
       data: {
