@@ -1,4 +1,4 @@
-
+<h1>Workouts</h1>
 <% @workouts.each do |workout| %>
     <div class="table-container">
 				<table class="table table-filter">
@@ -18,11 +18,11 @@ http://www.nbcolympics.com/sites/default/files/styles/951x536_rectangle/public/f
                     <% end %>
 									</a>
 									<div class="media-body">
-										<h4 class="title">
+										<h4 class="workout-title">
 											<%= workout.title %>
 										</h4>
 										<p class="summary"><%= workout.description %></p>
-                    <button type="button" class="pull-right btn btn-default btn-xs" data-toggle="modal" data-target="#modal-<%=workout.id%>">
+                    <button type="button" class="pull-right btn btn-success btn-xs" data-toggle="modal" data-target="#modal-<%=workout.id%>">
                       Log Workout
                     </button>
 									</div>

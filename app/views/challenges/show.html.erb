@@ -41,7 +41,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-4">
-			<%= link_to "Back to challenges", user_path(current_user) %>
+			<%= link_to "Back to challenges", user_path(current_user), params: {active_tab: 'challenges'} %>
 		</div>
 	</div>
 	<% if @challenge.accepted.nil? %>
