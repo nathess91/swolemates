@@ -27,5 +27,6 @@ class Challenge < ApplicationRecord
         'none'
       end
 	end
+end
 
 end
