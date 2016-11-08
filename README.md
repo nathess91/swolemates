@@ -22,3 +22,9 @@ Imagemagick
 # Database: <br>
 Postgresql <br>
 ![erd image](http://i.imgur.com/cs8eal6.png)
+
+# To Deploy: <br>
+1. clone the git directory <br>
+2. bundle install <br>
+3. rake db:setup <br> 
+4. rails server <br>
