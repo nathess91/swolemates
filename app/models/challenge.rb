@@ -9,11 +9,23 @@ class Challenge < ApplicationRecord
 
 	def declare_a_winner
 		return nil if opponent_results.nil?
-		if result.unit === 'mins' 
-			result.qty < opponent_results.qty ? user : opponent
-		else
-			result.qty < opponent_results.qty ? opponent : user
-		end
+		if result.unit === 'mins'
+			if result.qty < opponent_results.qty
+        user
+      elsif opponent_results.qty < result.qty
+        opponent
+      else
+        'none'
+      end
+
+		elsif
+      if result.qty > opponent_results.qty
+        user
+      elsif opponent_results.qty > result.qty
+        opponent
+      else
+        'none'
+      end
 	end
 
 end
