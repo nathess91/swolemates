@@ -1,15 +1,17 @@
 <div class="fluid-container">
-	<span id='heading'>Battle Royale: <%= @workout.title %></span><hr>
+	<span id='heading'>Battle Royale:</span><span id='title'> <%= @workout.title %></span><br><br>
 	<div class="row">
 		<div class= 'col-md-4 col-sm-12'>
 			<p class= "challengep"><%= image_tag @user.avatar.url(:thumb) %></p>
-			<h2 class= "challengep"><%= @user.first_name %> </h2>
-			<b class='result'>Result: </b><br>
-			<span class='glyphicon glyphicon-time'></span>
-			<span class='challengep'><%= @challenge.result.qty %></span><span class='challengep'> <%= @challenge.result.unit %></span>
-			<p class= "challengep"><%= "Winner!" if @winner === @user %></p>
-			<p class= "challengep"><%= "Loser!" if @winner === @opponent %></p>
-			<p class= "challengep"><%= "You Both Suck!" if @winner === 'none' %></p>
+			<div class='data'>
+				<h2 class= "challengep"><%= @user.first_name %> </h2>
+				<b class='result'>Result: </b><br>
+				<span class='glyphicon glyphicon-time'></span>
+				<span class='challengep'><%= @challenge.result.qty %></span><span class='challengep'> <%= @challenge.result.unit %></span>
+				<p class= "challengep"><%= "Winner!" if @winner === @user %></p>
+				<p class= "challengep"><%= "Loser!" if @winner === @opponent %></p>
+				<p class= "challengep"><%= "You Both Suck!" if @winner === 'none' %></p>
+			</div>
 		</div>
 
 		<div class= 'col-md-4 col-sm-12'>
@@ -22,11 +24,11 @@
 
 		<div class= 'col-md-4 col-sm-12'>
 			<p class= "challengep"><%= image_tag @opponent.avatar.url(:thumb) %></p>
-			<h2 class= "challengep"><%= @opponent.first_name %> </h2>
+			<div class='data'><h2 class= "challengep"><%= @opponent.first_name %> </h2>
 			<b class='result'>Result: </b><br>
 			<% if @opponent_results %>
-			<span style='color:#337ab7; font-size:30px' class='glyphicon glyphicon-time'></span>
-		<span style='font-size:30px'>	<%= @challenge.opponent_results.qty %> <%= @challenge.opponent_results.unit %></span>
+			<span style='font-size:30px' class='glyphicon glyphicon-time'></span>
+		  <span class='challengep' style='font-size:30px'>	<%= @challenge.opponent_results.qty %> <%= @challenge.opponent_results.unit %></span>
 			<p class= "challengep" style='font-size:30px'><%= "Loser!" if @winner === @user %></p>
 			<p class= "challengep" style='font-size:30px'><%= "Winner!" if @winner === @opponent %></p>
 			<p class= "challengep" style='font-size:30px'><%= "You Both Suck!" if @winner === 'none' %></p>
@@ -43,11 +45,13 @@
 			<p class='challengep'><img style='width:25px !important; height:25px !important; margin-left:12vw;' src='https://1.bp.blogspot.com/-rEeXiV82AUE/VuGkY15TF7I/AAAAAAAAAUk/iBviJW2ebVw/s200/spinningwheel.gif'></p>
 			<% end %>
 		</div>
+		</div>
 	</div>
 			<% if @challenge.accepted.nil? %>
 			<% if current_user == @opponent %>
 				<%= link_to "Be a lil bitch (we'll think less of you)", challenge_path(@challenge), {:method => :delete, class: "btn btn-danger inl"}  %>
 			<% end %>
 			<% end %>
+			<br>
 			<%= link_to "Back to challenges", user_path(current_user), class: "btn btn-primary inl" %>
 </div>
