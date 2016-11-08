@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .header {
-  padding-bottom: 20px;
+
 }
 
 .wrapper {
@@ -44,7 +44,7 @@
 }
 
 .register{
-  top: -750px;
+  top: -775px;
   z-index: 10 !important;
 }
 
@@ -84,8 +84,8 @@
 .title-text{
   color: white;
   position: relative;
-  left: 35px;
-  background-color: rgba(75,75,75,.6)
+  float: right;
+  background-color: rgba(75,75,75,.6);
 }
 
 .title-text-h2{
@@ -106,6 +106,9 @@
 }
 
 @media only screen and (max-device-width: 480px) {
+  .title {
+    top: 500px !important;
+  }
   .title-text-h2{
     font-size: 2em;
   }
@@ -114,7 +117,18 @@
     text-align: left;
   }
   .register{
-    top: -500px;
+    top: -15px;
     z-index: 10 !important;
+    left: -36px;
   }
+  .form-control {
+    width: 350px !important;
+  }
+  .btn-signuplog {
+    width: 350px !important;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 400px) {
+  .title-text { display: none; }  /* hide it on small screens */
 }
