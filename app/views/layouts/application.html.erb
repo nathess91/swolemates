@@ -21,17 +21,19 @@
            <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
                <ul class="nav sidebar-nav">
                    <li class="sidebar-brand">
-
                           <class="navbar-brand"><%= link_to "Swolemates", root_path, :class => "nav-title" %>
-
                    </li>
-                   <li><%= link_to "About Swolemates", root_path %></li>
-                   <li><%= link_to "Workouts", workouts_path %></li>
+
                    <% if current_user %>
                    <li><%= link_to "Profile", user_path(current_user) %></li>
                    <li><%= link_to "Your Results", results_path(current_user) %></li>
+                   <% end %>
+                   <li><%= link_to "Workouts", workouts_path %></li>
+                   <li><a href="/pages/about">About Swolemates</a></li>
+                   <% if current_user %>
                    <li><%= link_to "Log Out", logout_path %></li>
                    <% end %>
+
                </ul>
            </nav>
            <!-- /#sidebar-wrapper -->
