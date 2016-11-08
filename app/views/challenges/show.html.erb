@@ -6,7 +6,7 @@
 			<div class='data'>
 				<h2 class= "challengep"><%= @user.first_name %> </h2>
 				<b class='result'>Result: </b><br>
-				<span class='glyphicon glyphicon-time'></span>
+				<span class='glyph glyphicon glyphicon-time'></span>
 				<span class='challengep'><%= @challenge.result.qty %></span><span class='challengep'> <%= @challenge.result.unit %></span>
 				<p class= "challengep"><%= "Winner!" if @winner === @user %></p>
 				<p class= "challengep"><%= "Loser!" if @winner === @opponent %></p>
@@ -27,7 +27,7 @@
 			<div class='data'><h2 class= "challengep"><%= @opponent.first_name %> </h2>
 			<b class='result'>Result: </b><br>
 			<% if @opponent_results %>
-			<span style='font-size:30px' class='glyphicon glyphicon-time'></span>
+			<span style='font-size:30px' class='glyph glyphicon glyphicon-time'></span>
 		  <span class='challengep' style='font-size:30px'>	<%= @challenge.opponent_results.qty %> <%= @challenge.opponent_results.unit %></span>
 			<p class= "challengep" style='font-size:30px'><%= "Loser!" if @winner === @user %></p>
 			<p class= "challengep" style='font-size:30px'><%= "Winner!" if @winner === @opponent %></p>
