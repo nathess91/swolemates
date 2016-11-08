@@ -28,4 +28,3 @@ class Challenge < ApplicationRecord
       end
 	end
 end
-end
