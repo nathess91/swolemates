@@ -109,7 +109,9 @@
         </div>
       </div>
       <br>
-      <%= link_to 'Log Another Workout', workouts_path, class: 'btn btn-primary'%>
+      <% if current_user == @user %>
+        <%= link_to 'Log Another Workout', workouts_path, class: 'btn btn-primary'%>
+      <% end %>
       <%= link_to 'New Challenege', "#new-challenge-modal", "data-toggle" => "modal", class: 'btn btn-warning' %>
 
     </div>
