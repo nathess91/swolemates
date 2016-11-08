@@ -50,7 +50,7 @@
     </div>
   </button> -->
     <!-- MAIN CONTENT -->
-    <div class="container">
+    <div class="container main-div">
       <!-- FLASH MESSAGES -->
       <%= render "partials/error_flash" %>
       <%= render "partials/success_flash" %>
@@ -58,7 +58,10 @@
       <%= yield %>
       <% if current_user then %>
         <%= render "challenges/new" %>
+      <% else %>
+        <%= render "partials/login" %>
       <% end %>
+
       </div>
     </div>
 
