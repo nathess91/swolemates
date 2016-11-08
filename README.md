@@ -20,7 +20,5 @@ BCrypt<br>
 Imagemagick
 
 # Database: <br>
-Postgresql
-
-# Database ERD: <br>
+Postgresql <br>
 ![erd image](http://i.imgur.com/cs8eal6.png)
