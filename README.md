@@ -38,3 +38,23 @@ User can...<br>
 5. Declare a winner based on the results <br>
 6. Create username/login<br>
 Full Trello Board: https://trello.com/b/nVY0T1JK/so-swole
+
+# Wireframes<br>
+
+Profile Page <br>
+![profile page](http://i.imgur.com/9Z7OZfa.jpg)<br>
+
+Head to head challenge <br> 
+![head to head challenge](http://i.imgur.com/NQZqUKm.png)<br>
+
+View all challenges<br>
+![view all challenges](http://i.imgur.com/bSJMqL2.jpg)<br>
+
+Create new challenge<br>
+![create challenge](http://i.imgur.com/VEE707r.jpg)<br>
+
+View All Workouts <br> 
+![all workouts](http://i.imgur.com/T1Cbsy1.jpg)<br>
+
+Homepage<br>
+![homepage](http://i.imgur.com/hphkagl.jpg)<br>
