@@ -7,7 +7,16 @@
 					<td>
 						<div class="media">
 							<a href="#" class="pull-left">
-                <img src='www.google.com' height='100px'>
+                  <% if result.workout.verb == 'run' %>
+									<img src="https://c1.staticflickr.com/5/4074/4879698252_d0581d68dd_b.jpg" class="image">
+                  <% elsif result.workout.verb == 'bike' %>
+                  <img src="http://claimyourjourney.com/wp-content/uploads/2012/06/bike.jpg" class="image">
+                  <% elsif result.workout.verb == 'swim' %>
+                  <img src="
+http://www.nbcolympics.com/sites/default/files/styles/951x536_rectangle/public/field_image/06August2016/maya-dirado-usatsi_8016584.jpg?itok=i_Wq--A6" class="image">
+                  <% elsif result.workout.verb == 'lift' %>
+                  <img src='http://s3.amazonaws.com/cme_public_images/www_livestrong_com/photos.demandstudios.com/getty/article/94/204/525451929_XS.jpg' class='image'>
+                  <% end %>
 							</a>
 							<div class="media-body">
 								<h4 class="title">
