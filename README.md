@@ -1,26 +1,27 @@
-# README
+# Swolemates
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+People work out better together.  Swolemates is a platform for friendly competition where people push each other
+to achieve their peak physical condition.  Join the community and find your Swolemate!
 
-Things you may want to cover:
+Technologies Used: <br>
+Ruby 2.3.0 <br>
+Rails 5.0.0.1 <br>
+Javascript 5.1 <br>
+Html 5 <br>
+CSS 3 
 
-* Ruby version
+Frameworks, libraries, and gems: <br>
+Bootstrap<br>
+Ajax<br>
+Turbolinks <br>
+Will_paginate<br>
+Paperclip<br>
+BCrypt<br>
+Imagemagick
 
-* System dependencies
+Database: <br>
+Postgresql
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
+Database ERD: 
 ![erd image](http://i.imgur.com/cs8eal6.png)
