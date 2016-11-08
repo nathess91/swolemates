@@ -13,7 +13,7 @@
             <b>Swole Since:   </b> <%= @user.created_at.strftime("%B %d, %Y") %><br>
             <b>Food/Diet:   </b> <%= @user.fav_food %><br>
             <b>Favorite Workout:   </b> <%= @user.fav_workout %><br>
-            <button type="button" class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-edit-profile">
+            <button type="button" id="edit-button" class="glyphicon glyphicon-pencil btn btn-default btn-xs" data-toggle="modal" data-target="#modal-edit-profile">
           </span>
 
 
