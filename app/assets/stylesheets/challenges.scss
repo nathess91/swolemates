@@ -1,10 +1,10 @@
 // Place all the styles related to the Challenges controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.fluid-container {
-	background-image: url('http://www.omaa.org.uk/sites/default/files/Boxing-008.jpg');
-	background-repeat: none;
-}
+// .fluid-container {
+// 	background-image: url('http://www.omaa.org.uk/sites/default/files/Boxing-008.jpg');
+// 	background-repeat: none;
+// }
 
 .challenge_photo {
 	height: 200px;
@@ -19,7 +19,7 @@
 }
 #title {
 	font-size: 75px;
-	color: white;
+	color: black;
 }
 .small-container {
 	width: 550px !important;
@@ -28,33 +28,37 @@
 	font-size: 40px;
 	position: absolute;
 	top: 8vh;
-	color: white;
+	color: black;
 }
 #heading {
 	font-size: 75px;
 	padding-left: 6vw;
-	color: white;
+	color: black;
 }
 .glyphicon-time {
-	color: white;
+	color: black;
 	font-size: 30px;
 	align: center;
 	padding-left: 8vw;
 }
-.data {
-	background-color: rgba(0,0,0,.3);
-	border-radius: 10px;
-}
+// .data {
+// 	background-color: rgba(0,0,0,.3);
+// 	border-radius: 10px;
+// }
 .result {
 	font-size: 40px;
-	color: white;
+	color: black;
 	padding-left: 8vw;
 }
-
+.challenge-gif {
+	width:40px;
+	height:40px;
+	margin-left: 12vw;
+}
 .challengep {
 	text-align: center;
 	font-size: 30px !important;
-	color: white;
+	color: black;
 }
 
 @media (max-width: 700px) {
@@ -73,7 +77,7 @@
 		padding-bottom: 50px;
 		color: black;
 	}
-	img {
+	.img {
 		width: 150px;
 		height: 150px;
 	}
@@ -104,7 +108,10 @@
 		color: #217FFF;
 	}
 	.data {
-		background-color: white;
+		background-color: black;
+	}
+	.challenge-gif {
+		margin-left: 43vw;
 	}
 }
 img {
