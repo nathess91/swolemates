@@ -41,13 +41,15 @@
 	</div>
 	<div class="row">
 		<div class="col-md-4">
-			<%= link_to "Back to challenges", challenges_path %>
+			<%= link_to "Back to challenges", user_path(current_user) %>
 		</div>
 	</div>
 	<% if @challenge.accepted.nil? %>
+	<% if current_user == @opponent %>
 	<div class="row">
 		<%= button_to "Be a lil bitch (we'll think less of you)", challenge_path(@challenge), {:method => :delete, class: "btn btn-danger"}  %>
 	</div>
+	<% end %>
 	<% end %>
 
 

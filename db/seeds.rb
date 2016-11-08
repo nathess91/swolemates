@@ -12,9 +12,12 @@ User.create(first_name: 'Natalia', last_name: 'Hess', email: 'natalia@fruit.com'
 Workout.create(cal: '50', title: 'The Nathan', description: '100 mile bike ride, while dreaming about potatoes', verb: 'bike', qty: 100, unit: 'miles', unit_of_competition: 'mins')
 Workout.create(cal: '100', title: 'The Other Toby', description: '10 mile run, preferably through the wilderness, reflecting on your feelings', verb: 'run', qty: 10, unit: 'miles', unit_of_competition: 'mins')
 
-Workout.create(cal: '100', title: 'The Toby', description: '5 mile run, preferably through the wilderness, reflecting on your feelings', verb: 'run', qty: 5, unit: 'miles', unit_of_competition: 'mins')
-Workout.create(cal: '50', title: 'The Natalia', description: '15 mile bike ride, stopping every mile to lift heavy weights', verb: 'bike', qty: 15, unit: 'miles', unit_of_competition: 'mins')
-Workout.create(cal: '200', title: 'The Teddy', description: '500 meter swim, stopping every lap to gasp for air and try to climb out', verb: 'swim', qty: 500, unit: 'meters', unit_of_competition: 'mins')
+
+Workout.create(title: 'The Toby', description: '5 mile run, preferably through the wilderness, reflecting on your feelings', verb: 'run', qty: 5, unit: 'miles', unit_of_competition: 'mins')
+Workout.create(title: 'The Natalia', description: '15 mile bike ride, stopping every mile to lift heavy weights', verb: 'bike', qty: 15, unit: 'miles', unit_of_competition: 'mins')
+Workout.create(title: 'The Teddy', description: '500 meter swim, stopping every lap to gasp for air and try to climb out', verb: 'swim', qty: 500, unit: 'meters', unit_of_competition: 'mins')
+Workout.create(title: "The Bill", description: '1 mile through an obstacke course', verb: 'run', qty: 1, unit: 'mile', unit_of_competition: 'mins')
+
 
 
 
