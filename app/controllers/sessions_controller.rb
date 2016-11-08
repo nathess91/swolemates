@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
 			flash[:success] = "You are now logged in."
 			redirect_to @user
 		else
-			flash[:error] = @user.errors.full_messages.join(". ")
+			flash[:error] = "Incorrect login or password"
 			redirect_to root_path
 		end
 
