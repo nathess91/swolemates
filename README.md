@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+![erd image](http://i.imgur.com/cs8eal6.png)
