@@ -56,15 +56,12 @@
       <!-- FLASH MESSAGES -->
       <%= render "partials/error_flash" %>
       <%= render "partials/success_flash" %>
-      <div class="row">
       <%= yield %>
       <% if current_user then %>
         <%= render "challenges/new" %>
       <% else %>
         <%= render "partials/login" %>
       <% end %>
-
-      </div>
     </div>
 
   </body>
