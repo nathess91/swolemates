@@ -27,7 +27,7 @@ figure.snip1174 * {
   transition: all 0.35s ease;
 }
 figure.snip1174 img {
-  max-width: 100%;
+  width: 100%;
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
   vertical-align: top;
@@ -98,4 +98,19 @@ figure.snip1174.hover a {
   -webkit-transform: translateY(0);
   transform: translateY(0);
   opacity: 1;
+}
+
+#about-description {
+  margin: 40px;
+  font-weight: 300;
+  line-height: 23px;
+}
+
+.love-us {
+  float: right;
+  font-family: 'Permanent Marker', cursive;
+}
+
+.love-us h1 {
+  text-align: right;
 }
