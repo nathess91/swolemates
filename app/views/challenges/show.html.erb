@@ -1,37 +1,44 @@
+<h1>Battle Royale: It's Lit!</h1>
+<br>
+<h2 class="battle-title"><%= @workout.title %></h2>
+			<h4><%= @workout.verb %> <%= @workout.qty %> <%= @workout.unit %></h4>
+			<br>
 <div class="fluid-container">
-	<span id='heading'>Battle Royale:</span><span id='title'> <%= @workout.title %></span><br><br>
 	<div class="row">
-		<div class= 'col-md-4 col-sm-12'>
-			<p class= "challengep"><%= image_tag @user.avatar.url(:thumb) %></p>
+		<div class='well col-md-4 col-sm-12'>
+			<p class="challengep"><%= image_tag @user.avatar.url(:thumb) %></p>
 			<div class='data'>
 				<h2 class= "challengep"><%= @user.first_name %> </h2>
 				<b class='result'>Result: </b><br>
-				<span style='font-size:30px' class='glyphicon glyphicon-time'></span>
+				<span style='font-size:30px' class='glyphicon glyphicon-time battle-time'></span>
 				<span class='challengep'><%= @challenge.result.qty %></span><span class='challengep'> <%= @challenge.result.unit %></span>
-				<p class= "challengep"><%= "Winner!" if @winner === @user %></p>
-				<p class= "challengep"><%= "Loser!" if @winner === @opponent %></p>
-				<p class= "challengep"><%= "You Both Suck!" if @winner === 'none' %></p>
+				<span class="win-message">
+					<p class= "challengep" style="font-size:30px; color:green;"><%= "Winner!" if @winner === @user %></p>
+					<p class= "challengep" style="font-size:30px; color:red;"><%= "Loser!" if @winner === @opponent %></p>
+					<p class= "challengep"><%= "You Both Suck!" if @winner === 'none' %></p>
+				</span>
 			</div>
 		</div>
 
 		<div class= 'col-md-4 col-sm-12'>
 			<div class='vs'>
-				<span><%= @workout.verb.upcase %> <%= @workout.qty %> <%= @workout.unit.upcase %></span>
 				<h1 style='font-size:50px; text-align:center;'> VS </h1>
 			</div>
 		</div>
 
 
-		<div class= 'col-md-4 col-sm-12'>
-			<p class= "challengep"><%= image_tag @opponent.avatar.url(:thumb) %></p>
+		<div class='well col-md-4 col-sm-12'>
+			<p class="challengep"><%= image_tag @opponent.avatar.url(:thumb) %></p>
 			<div class='data'><h2 class= "challengep"><%= @opponent.first_name %> </h2>
 			<b class='result'>Result: </b><br>
 			<% if @opponent_results %>
-			<span style='font-size:30px' class='glyphicon glyphicon-time'></span>
+			<span style='font-size:30px' class='glyphicon glyphicon-time battle-time'></span>
 		  <span class='challengep' style='font-size:30px'>	<%= @challenge.opponent_results.qty %> <%= @challenge.opponent_results.unit %></span>
-			<p class= "challengep" style='font-size:30px'><%= "Loser!" if @winner === @user %></p>
-			<p class= "challengep" style='font-size:30px'><%= "Winner!" if @winner === @opponent %></p>
+			<span class="win-message">
+			<p class= "challengep" style="font-size:30px; color:red;"><%= "Loser!" if @winner === @user %></p>
+			<p class= "challengep" style='font-size:30px; color:green;'><%= "Winner!" if @winner === @opponent %></p>
 			<p class= "challengep" style='font-size:30px'><%= "You Both Suck!" if @winner === 'none' %></p>
+			</span>
 			<% elsif current_user == @opponent%>
 					<%= form_for (@result = Result.new), url: challenge_path(@challenge), method: :put  do |f| %>
 						<%= f.text_field :qty, class: 'form-control col-xs-2' %>
@@ -53,5 +60,5 @@
 			<% end %>
 			<% end %>
 			<br>
-<a class="btn btn-primary inl" href='/users/<%= current_user.id %>?active_tab=challenges'>Back to Challenges</a>
+<a class="btn btn-primary" href='/users/<%= current_user.id %>?active_tab=challenges'>Back to Challenges</a>
 </div>
