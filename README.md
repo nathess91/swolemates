@@ -3,6 +3,12 @@
 People work out better together.  Swolemates is a platform for friendly competition where people push each other
 to achieve their peak physical condition.  Join the community and find your Swolemate!
 
+Contributors: <br>
+Toby Zitsman https://github.com/tzits <br>
+Natalia Hess https://github.com/nathess91 <br>
+Teddy Coleman https://github.com/teddycoleman <br>
+Bill Cheng https://github.com/billcheng-ucla
+
 # Technologies Used: <br>
 Ruby 2.3.0 <br>
 Rails 5.0.0.1 <br>
