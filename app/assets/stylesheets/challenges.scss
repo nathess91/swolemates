@@ -6,29 +6,34 @@
 // 	background-repeat: none;
 // }
 
+.win-message {
+	font-family: 'Permanent Marker', cursive;
+}
 .challenge_photo {
 	height: 200px;
 }
 
-.challenge-header, .challenge-tagline {
-
+.battle-time {
+	margin-left: 25%;
+	margin-right: 10px
 }
 
-.align-center{
-	text-align: center;
-}
-#title {
-	font-size: 75px;
-	color: black;
+
+.battle-title {
+	font-family: 'Permanent Marker', cursive;
 }
 .small-container {
 	width: 550px !important;
 }
 .vs {
-	font-size: 40px;
+	margin-left: 145px;
 	position: absolute;
 	top: 8vh;
 	color: black;
+}
+
+.vs h1 {
+	font-family: 'Permanent Marker', cursive;
 }
 #heading {
 	font-size: 75px;
@@ -46,7 +51,7 @@
 	margin-left: 12vw;
 }
 .challengep {
-	text-align: center;
+	text-align: center !important;
 	font-size: 30px !important;
 	color: black;
 }
@@ -66,6 +71,7 @@
 		padding-top: 50px;
 		padding-bottom: 50px;
 		color: black;
+		margin-left: 0;
 	}
 	#heading {
 		font-size: 40px;
@@ -103,6 +109,12 @@
 		margin-top: 5px;
 		margin: 0 !important;
 	}
+	.battle-time {
+		margin-left: -5%;
+		margin-right: 10px;
+		color: inherit;
+	}
+
 }
 img {
 	vertical-align: middle;
@@ -110,16 +122,6 @@ img {
 	height: 300px;
 }
 
-#opponent
-{
+#opponent {
 	float: right;
 }
-// .loser
-// {
-// 	background-color: red;
-// }
-//
-// .winner
-// {
-// 	background-color: lime;
-// }

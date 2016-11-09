@@ -13,7 +13,9 @@
             <b>Swole Since:   </b> <%= @user.created_at.strftime("%B %d, %Y") %><br>
             <b>Food/Diet:   </b> <%= @user.fav_food %><br>
             <b>Favorite Workout:   </b> <%= @user.fav_workout %><br>
+            <% if current_user == @user %>
             <button type="button" id="edit-button" class="glyphicon glyphicon-pencil btn btn-default btn-xs" data-toggle="modal" data-target="#modal-edit-profile">
+            <% end %>
           </span>
 
 
@@ -87,8 +89,10 @@
                         <p class="list-group-item-text">
                           <span style="color:green;">Your Results: </span>
                           <%= result.workout.qty %> <%= result.workout.unit %> in <%= result.qty %> <%= result.workout.unit_of_competition %>
-                          <%= link_to results_destroy_path(current_user.id, result.id), method: :delete do %>
-                            <span class="pull-right btn btn-danger btn-xs glyphicon glyphicon-remove"></span>
+                          <% if current_user == @user %>
+                            <%= link_to results_destroy_path(current_user.id, result.id), method: :delete do %>
+                              <span class="pull-right btn btn-danger btn-xs glyphicon glyphicon-remove"></span>
+                            <% end %>
                           <% end %>
                         </p>
                       </div>
@@ -110,9 +114,11 @@
       </div>
       <br>
       <% if current_user == @user %>
-        <%= link_to 'Log Another Workout', workouts_path, class: 'btn btn-primary'%>
+        <%= link_to 'Back to Workouts', workouts_path, class: 'btn btn-primary'%>
+        <%= link_to 'New Challenege', "#new-challenge-modal", "data-toggle" => "modal", class: 'btn btn-warning' %>
+        <% else %>
+        <%= link_to 'Back to Your Profile', user_path(current_user), class:'btn btn-primary' %>
       <% end %>
-      <%= link_to 'New Challenege', "#new-challenge-modal", "data-toggle" => "modal", class: 'btn btn-warning' %>
 
     </div>
 

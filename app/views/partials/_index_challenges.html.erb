@@ -7,7 +7,7 @@
         <% status = challenge.opponent_results_id === nil ? "Active" : "Completed" %>
         <div>
           <h3><%= link_to "#{status} Challenge", challenge_path(challenge)%> </h3>
-          <%= "#{challenge.workout.title} vs " %> <%= current_user.id === challenge.user.id ? "#{challenge.opponent.first_name}" : "#{challenge.user.first_name}"%>
+          <%= "#{challenge.workout.title} vs. " %> <%= current_user.id === challenge.user.id ? "#{challenge.opponent.first_name}" : "#{challenge.user.first_name}"%>
         </div>
       </div>
       <div class="col-md-6">
