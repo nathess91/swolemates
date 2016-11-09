@@ -56,7 +56,7 @@
 	</div>
 			<% if @challenge.accepted.nil? %>
 			<% if current_user == @opponent %>
-				<%= link_to "Be a lil bitch (we'll think less of you)", challenge_path(@challenge), {:method => :delete, class: "btn btn-danger inl"}  %>
+				<%= link_to "Chicken Out", challenge_path(@challenge), {:method => :delete, class: "btn btn-danger inl"}  %>
 			<% end %>
 			<% end %>
 			<br>
